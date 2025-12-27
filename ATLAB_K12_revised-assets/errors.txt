@@ -1,0 +1,7 @@
+[16/12/2025, 11:49:00 am] layer "Circle shape 4.png  copy 7": Expected end of input but "c" found.
+[16/12/2025, 11:49:00 am] layer "400+   ": Expected end of input but "+" found.
+[16/12/2025, 11:49:00 am] layer "1,200+": Expected end of input but "+" found.
+[16/12/2025, 11:49:00 am] layer "500+": Expected end of input but "+" found.
+[16/12/2025, 11:49:00 am] layer "50,000+": Expected end of input but "+" found.
+[16/12/2025, 11:49:00 am] layer "100,000+": Expected end of input but "+" found.
+[16/12/2025, 11:49:00 am] layer "  Atlab Trading L.L.C Ahmad Mustafa Hassan Ahli Compound, Offic": Expected end of input but "A" found.
