@@ -10,9 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Raleway:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="sticky-header.css">
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="sticky-header.js"></script>
 
 </head>
 
@@ -1168,19 +1170,40 @@
     
     <script>
         // Hamburger Menu Toggle
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
         const navContent = document.querySelector('.nav-content');
-        const closeButton = document.querySelector('.close-btn');
 
-        hamburgerMenu.addEventListener('click', () => {
-            navContent.classList.toggle('open');
-            hamburgerMenu.classList.toggle('open');
-        });
+        if (hamburgerMenu && navContent) {
+            hamburgerMenu.addEventListener('click', (e) => {
+                e.stopPropagation();
+                navContent.classList.toggle('open');
+                hamburgerMenu.classList.toggle('open');
+                
+                // ONLY ADD SCROLL LOCK - nothing else
+                if (navContent.classList.contains('open')) {
+                    // Disable body scroll when menu opens
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    // Re-enable body scroll when menu closes
+                    document.body.style.overflow = '';
+                }
+            });
 
-        if (closeButton) {
-            closeButton.addEventListener('click', () => {
-                navContent.classList.remove('open');
-                hamburgerMenu.classList.remove('open');
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (navContent.classList.contains('open') && 
+                    !navContent.contains(e.target) && 
+                    !hamburgerMenu.contains(e.target)) {
+                    navContent.classList.remove('open');
+                    hamburgerMenu.classList.remove('open');
+                    // Re-enable body scroll
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Prevent menu from closing when clicking inside it
+            navContent.addEventListener('click', (e) => {
+                e.stopPropagation();
             });
         }
 
@@ -1709,6 +1732,16 @@
         sections.forEach(section => {
             observer.observe(section);
         });
+
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+        
+        // Debug function for sticky header (open browser console and type: debugStickyHeader())
+        console.log('K-12 page loaded. If header is not sticky, open console and run: debugStickyHeader()');
     </script>
 
     </body>
