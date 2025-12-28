@@ -1,49 +1,40 @@
-// Simple Sticky Header JavaScript - Just for sticky functionality
+// FIXED HEADER - Simple and Direct
 
 (function() {
     'use strict';
     
-    // Wait for DOM to be ready
-    function ready(fn) {
-        if (document.readyState !== 'loading') {
-            fn();
-        } else {
-            document.addEventListener('DOMContentLoaded', fn);
-        }
-    }
-    
-    ready(function() {
-        const stickyHeader = document.querySelector('.sticky-header');
+    function initFixedHeader() {
+        const header = document.querySelector('.sticky-header');
         
-        if (!stickyHeader) {
-            console.warn('Sticky header element not found');
+        if (!header) {
+            console.warn('Header not found');
             return;
         }
         
-        // Function to handle scroll events for enhanced shadow
-        function handleScroll() {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
-            // Add shadow when scrolled
-            if (scrollTop > 10) {
-                stickyHeader.classList.add('scrolled');
+        // Force fixed positioning
+        header.style.position = 'fixed';
+        header.style.top = '0';
+        header.style.left = '0';
+        header.style.right = '0';
+        header.style.width = '100%';
+        header.style.zIndex = '10000';
+        header.style.backgroundColor = '#fff';
+        
+        // Add shadow on scroll
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 10) {
+                header.classList.add('scrolled');
             } else {
-                stickyHeader.classList.remove('scrolled');
+                header.classList.remove('scrolled');
             }
-        }
+        }, { passive: true });
         
-        // Add scroll listener
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        
-        console.log('Sticky header initialized successfully');
-        
-        // Debug function
-        window.debugStickyHeader = function() {
-            console.log('=== Sticky Header Debug Info ===');
-            console.log('Header element:', stickyHeader);
-            console.log('Header classes:', stickyHeader.className);
-            console.log('Current scroll position:', window.pageYOffset);
-            console.log('Header computed style position:', window.getComputedStyle(stickyHeader).position);
-        };
-    });
+        console.log('Fixed header applied - header will stay at top');
+    }
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initFixedHeader);
+    } else {
+        initFixedHeader();
+    }
 })();

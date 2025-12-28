@@ -1169,23 +1169,33 @@
     
     
     <script>
-        // Hamburger Menu Toggle
+        // Hamburger Menu Toggle with Scroll Lock
         const hamburgerMenu = document.querySelector('.hamburger-menu');
         const navContent = document.querySelector('.nav-content');
+        let scrollPosition = 0;
 
         if (hamburgerMenu && navContent) {
             hamburgerMenu.addEventListener('click', (e) => {
                 e.stopPropagation();
-                navContent.classList.toggle('open');
-                hamburgerMenu.classList.toggle('open');
                 
-                // ONLY ADD SCROLL LOCK - nothing else
                 if (navContent.classList.contains('open')) {
-                    // Disable body scroll when menu opens
-                    document.body.style.overflow = 'hidden';
-                } else {
-                    // Re-enable body scroll when menu closes
+                    // Close menu and restore scroll
+                    navContent.classList.remove('open');
+                    hamburgerMenu.classList.remove('open');
                     document.body.style.overflow = '';
+                    document.body.style.position = '';
+                    document.body.style.top = '';
+                    document.body.style.width = '';
+                    window.scrollTo(0, scrollPosition);
+                } else {
+                    // Open menu and lock scroll
+                    scrollPosition = window.pageYOffset;
+                    navContent.classList.add('open');
+                    hamburgerMenu.classList.add('open');
+                    document.body.style.overflow = 'hidden';
+                    document.body.style.position = 'fixed';
+                    document.body.style.top = `-${scrollPosition}px`;
+                    document.body.style.width = '100%';
                 }
             });
 
@@ -1194,16 +1204,45 @@
                 if (navContent.classList.contains('open') && 
                     !navContent.contains(e.target) && 
                     !hamburgerMenu.contains(e.target)) {
+                    // Close menu and restore scroll
                     navContent.classList.remove('open');
                     hamburgerMenu.classList.remove('open');
-                    // Re-enable body scroll
                     document.body.style.overflow = '';
+                    document.body.style.position = '';
+                    document.body.style.top = '';
+                    document.body.style.width = '';
+                    window.scrollTo(0, scrollPosition);
                 }
             });
 
             // Prevent menu from closing when clicking inside it
             navContent.addEventListener('click', (e) => {
                 e.stopPropagation();
+            });
+
+            // Close menu on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && navContent.classList.contains('open')) {
+                    navContent.classList.remove('open');
+                    hamburgerMenu.classList.remove('open');
+                    document.body.style.overflow = '';
+                    document.body.style.position = '';
+                    document.body.style.top = '';
+                    document.body.style.width = '';
+                    window.scrollTo(0, scrollPosition);
+                }
+            });
+
+            // Close menu on window resize
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 1024 && navContent.classList.contains('open')) {
+                    navContent.classList.remove('open');
+                    hamburgerMenu.classList.remove('open');
+                    document.body.style.overflow = '';
+                    document.body.style.position = '';
+                    document.body.style.top = '';
+                    document.body.style.width = '';
+                }
             });
         }
 
@@ -1740,8 +1779,7 @@
             offset: 100
         });
         
-        // Debug function for sticky header (open browser console and type: debugStickyHeader())
-        console.log('K-12 page loaded. If header is not sticky, open console and run: debugStickyHeader()');
+        console.log('K-12 page loaded. Sticky header should be working.');
     </script>
 
     </body>

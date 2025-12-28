@@ -159,34 +159,21 @@ main{
     /* padding: 0 40px; */
 }
 
-/* Header Styles */
+/* Header Styles - FIXED POSITION */
 .sticky-header {
-    position: -webkit-sticky; /* Safari support */
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    background-color: #fff;
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-    /* Ensure it works in all contexts */
-    will-change: transform;
-    backface-visibility: hidden;
-}
-
-.sticky-header.scrolled {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Fallback for browsers that don't support sticky */
-.no-sticky .sticky-header {
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
     right: 0 !important;
     width: 100% !important;
+    background-color: #fff !important;
+    z-index: 10000 !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    transition: box-shadow 0.3s ease !important;
+}
+
+.sticky-header.scrolled {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
 }
 .top-bar {
     background-color: #ff8c00; /* A shade of orange, can be adjusted */
@@ -5232,4 +5219,25 @@ main{
 
 .k12-cta-content .btn-learn-more:hover svg {
     transform: translateX(5px);
+}
+/* Prevent scrolling when mobile menu is open */
+body.menu-locked {
+    overflow: hidden !important;
+    position: fixed !important;
+    width: 100% !important;
+}
+
+/* Prevent touch scrolling on mobile menu */
+@media (max-width: 1024px) {
+    .nav-content.open {
+        touch-action: pan-y !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+    
+    /* Prevent body scroll on touch devices */
+    body:has(.nav-content.open) {
+        overflow: hidden !important;
+        position: fixed !important;
+        width: 100% !important;
+    }
 }
