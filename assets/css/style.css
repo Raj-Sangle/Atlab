@@ -5199,14 +5199,15 @@ main{
    =================================== */
 
 .educators-transform-section {
-    padding: 80px 0;
+    padding: 100px 0;
     background-color: #f8f9fa;  
 }
 
 .educators-header {
     text-align: center;
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto 60px;
+    padding: 0 20px;
 }
 
 .educators-header h2 {
@@ -5214,71 +5215,121 @@ main{
     font-size: 42px;
     font-weight: 700;
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     line-height: 1.2;
 }
 
 .educators-header p {
     font-family: "Poppins", sans-serif;
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: 500;
     color: #666;
     line-height: 1.8;
+    padding: 0 40px;
+    max-width: 950px;
+    margin: 0 auto;
 }
 
 .educators-cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    gap: 30px;
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .educator-card {
-    display: block;
-    width: 100%;
-    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 30px 40px;
+    border-radius: 24px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
+    min-height: 200px;
+    max-height: 240px;
 }
 
-.educator-card img {
-    width: 100%;
-    height: auto;
-    display: block;
+.educator-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.25), 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Card color variants */
+.card-teal {
+    background: linear-gradient(135deg, #1a7f7f 0%, #0d5858 100%);
+}
+
+.card-orange {
+    background: linear-gradient(135deg, #e67e3c 0%, #d4621f 100%);
+}
+
+.card-green {
+    background: linear-gradient(135deg, #2d9b6e 0%, #1f7a52 100%);
+}
+
+.card-dark-teal {
+    background: linear-gradient(135deg, #0f5a5a 0%, #083d3d 100%);
+}
+
+.educator-card .card-image {
+    flex-shrink: 0;
+    width: 180px;
+    height: 180px;
     border-radius: 20px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.educator-card .card-overlay {
-    position: absolute;
-    bottom:130px;
-    left: 300px;
-    right: 0;
-    /* background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 70%, transparent 100%); */
-    padding: 30px 20px 20px;
-    border-radius: 0 0 20px 20px;
+.educator-card .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
-.educator-card .card-overlay h2 {
+.educator-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.educator-card .card-content {
+    flex: 1;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.educator-card .card-content h3 {
     font-family: "Raleway", sans-serif;
-    font-size: 23px;
+    font-size: 24px;
     font-weight: 700;
     color: #fff;
     margin-bottom: 10px;
-    line-height: 1.5;
-}
-
-.educator-card .card-overlay h5{
-    color: #fff;
-    text-decoration: none;
     line-height: 1.2;
-    padding: 5px;
 }
 
-.educator-card .card-overlay p {
+.educator-card .card-content h4 {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    opacity: 0.95;
+}
+
+.educator-card .card-content p {
     font-family: "Poppins", sans-serif;
     font-size: 12px;
     color: #fff;
     line-height: 1.6;
     margin: 0;
+    opacity: 0.9;
 }
 
 .sr-only {
