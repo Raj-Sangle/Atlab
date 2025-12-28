@@ -1918,28 +1918,28 @@
 /* Tablet */
 @media (max-width: 1024px) {
     .find-solution-section {
-        padding: 50px 0 80px;
+        padding: 80px 0 80px;
     }
 
     .solution-wave-top {
-        width: 160px;
-        height: 80px;
+        width: 300px;
+        height: 150px;
+        top: 0;
     }
 
     .semi-circle {
-        width: 160px;
-        height: 80px;
-        border-radius: 0 0 80px 80px;
-        left: 50%;
-        transform: translateX(-50%);
+        width: 300px;
+        height: 150px;
+        border-radius: 0 0 150px 150px;
+        top: 0;
     }
 
     .find-solution-section .container {
-        margin-top: 30px;
+        margin-top: 60px;
     }
 
     .solution-content h2 {
-        font-size: 36px;
+        font-size: 28px;
     }
 
     .solution-content p {
@@ -1969,24 +1969,24 @@
 /* Mobile */
 @media (max-width: 768px) {
     .find-solution-section {
-        padding: 40px 0 60px;
+        padding: 60px 0 60px;
     }
 
     .solution-wave-top {
-        width: 120px;
-        height: 60px;
+        width: 250px;
+        height: 125px;
+        top: 0;
     }
 
     .semi-circle {
-        width: 120px;
-        height: 60px;
-        border-radius: 0 0 60px 60px;
-        left: 50%;
-        transform: translateX(-50%);
+        width: 250px;
+        height: 125px;
+        border-radius: 0 0 125px 125px;
+        top: 0;
     }
 
     .find-solution-section .container {
-        margin-top: 20px;
+        margin-top: 50px;
     }
 
     .solution-content {
@@ -1994,7 +1994,7 @@
     }
 
     .solution-content h2 {
-        font-size: 28px;
+        font-size: 24px;
         margin-bottom: 16px;
     }
 
@@ -2036,24 +2036,24 @@
 /* Small Mobile */
 @media (max-width: 480px) {
     .find-solution-section {
-        padding: 30px 0 50px;
+        padding: 50px 0 50px;
     }
 
     .solution-wave-top {
-        width: 100px;
-        height: 50px;
+        width: 200px;
+        height: 100px;
+        top: 0;
     }
 
     .semi-circle {
-        width: 100px;
-        height: 50px;
-        border-radius: 0 0 50px 50px;
-        left: 50%;
-        transform: translateX(-50%);
+        width: 200px;
+        height: 100px;
+        border-radius: 0 0 100px 100px;
+        top: 0;
     }
 
     .find-solution-section .container {
-        margin-top: 15px;
+        margin-top: 40px;
     }
 
     .solution-content {
@@ -2061,13 +2061,14 @@
     }
 
     .solution-content h2 {
-        font-size: 24px;
+        font-size: 22px;
         margin-bottom: 12px;
     }
 
     .solution-content p {
         font-size: 13px;
         margin-bottom: 24px;
+    }
         line-height: 1.6;
     }
 

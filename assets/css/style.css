@@ -4655,11 +4655,10 @@ main{
     position: relative;
     background-image: url('../../ATLAB_K12_revised-assets/Right_Solution_Banner.png');
     background-size: cover;
-    background-position: center;
+    background-position: center top;
     background-repeat: no-repeat;
-    padding: 60px 0 100px;
+    padding: 80px 0 100px;
     overflow: hidden;
-    /* margin-top: 0px; */
 }
 
 .find-solution-section::before {
@@ -4669,34 +4668,36 @@ main{
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(159, 78, 20, 0.85);
-    z-index: 1;
+    background: rgba(205, 101, 46, 0.75);
+    z-index: 2;
 }
 
 .solution-wave-top {
     position: absolute;
-    top: 0;
+    top: -340px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-100%);
     width: 400px;
-    height: 100px;
+    height: 200px;
     overflow: visible;
-    z-index: 2;
+    z-index: 5;
+    background: transparent;
 }
 
 .semi-circle {
-    width: 250px;
-    height: 120px;
-    background: #ffffff;
-    border-radius: 0 0 150px 150px;
+    width: 800px;
+    height: 450px;
+    background: rgba(240, 238, 238, 1);
+    border-radius: 0 0 400px 400px;
     position: absolute;
     top: 0;
-    left: 70px;
+    left: 0;
+    z-index: 5;
 }
 
 .find-solution-section .container {
     position: relative;
-    z-index: 3;
+    z-index: 10;
     margin-top: 90px;
 }
 
@@ -4708,7 +4709,7 @@ main{
 
 .solution-content h2 {
     font-family: 'Raleway', sans-serif;
-    font-size: 46px;
+    font-size: 36px;
     font-weight: 700;
     color: #ffffff;
     margin: 0 0 20px 0;
@@ -4717,7 +4718,7 @@ main{
 
 .solution-content p {
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.8;
     color: #ffffff;
     margin: 0 0 45px 0;
     opacity: 0.98;
@@ -4778,7 +4779,7 @@ main{
     fill: none;
     stroke-linecap: round;
     stroke-linejoin: round;
-    stroke: #000;
+    stroke: #333;
     stroke-width: 2;
     transform: translateX(-5px);
     transition: all 0.3s ease;
