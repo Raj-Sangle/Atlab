@@ -156,7 +156,8 @@ main{
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    /* padding: 0 40px; */
+    padding: 0 40px;
+    box-sizing: border-box;
 }
 
 /* Header Styles - FIXED POSITION */
@@ -4957,6 +4958,9 @@ main{
     .learning-reaches-section .container {
         position: relative;
         z-index: 2;
+        max-width: 1200px;
+        padding: 0 40px;
+        margin: 0 auto;
     }
 
     .learning-header {
@@ -5000,9 +5004,8 @@ main{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 24px;
-        padding: 0 20px;
+        padding: 0;
         position: relative;
-        top: 200px;
         align-items: start;
         z-index: 5;
     }
