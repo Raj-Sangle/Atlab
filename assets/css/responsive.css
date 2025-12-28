@@ -258,12 +258,31 @@
     }
 
     /* K-12 CTA Section */
+    .k12-cta-section {
+        overflow: hidden;
+    }
+
     .k12-cta-card {
+        flex-direction: row;
+        align-items: center;
         min-height: 350px;
+        padding: 40px 50px 40px 40px;
+        gap: 40px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .k12-cta-image {
+        flex: 0 0 350px;
+        width: 350px;
+        max-width: 40%;
     }
 
     .k12-cta-content {
-        padding: 50px 60px 50px 500px;
+        flex: 1;
+        text-align: left;
+        padding: 0;
+        max-width: 100%;
     }
 
     .k12-cta-content h2 {
@@ -830,22 +849,26 @@
 
     /* K-12 CTA Section - Tablet */
     .k12-cta-section {
-        padding: 60px 0;
+        padding: 50px 20px;
+        overflow: hidden;
     }
 
     .k12-cta-card {
         flex-direction: column;
+        align-items: flex-start;
         min-height: auto;
-        gap: 40px;
-        padding: 50px 40px;
+        gap: 30px;
+        padding: 40px 30px;
         border-radius: 24px;
         max-width: 100%;
+        box-sizing: border-box;
     }
 
     .k12-cta-image {
         flex: 0 0 auto;
         width: 100%;
-        max-width: 380px;
+        max-width: 320px;
+        align-self: center;
     }
 
     .k12-cta-image img {
@@ -853,24 +876,65 @@
     }
 
     .k12-cta-content {
-        text-align: center;
+        text-align: left;
         max-width: 100%;
+        width: 100%;
+        padding: 0;
     }
 
     .k12-cta-content h2 {
-        font-size: 32px;
-        margin-bottom: 20px;
+        font-size: 28px;
+        margin-bottom: 18px;
+        line-height: 1.3;
     }
 
     .k12-cta-content p {
-        font-size: 16px;
-        margin: 0 auto 28px;
-        max-width: 100%;
+        font-size: 15px;
+        margin: 0 0 26px;
+        line-height: 1.6;
     }
 
     .k12-cta-content .btn-learn-more {
-        padding: 14px 30px;
-        font-size: 15px;
+        padding: 12px 18px;
+        font-size: 14px;
+    }
+}
+
+/* Smaller Tablet - 900px */
+@media (max-width: 900px) {
+    .k12-cta-section {
+        padding: 45px 20px;
+        overflow: hidden;
+    }
+
+    .k12-cta-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+        padding: 35px 25px;
+        box-sizing: border-box;
+    }
+
+    .k12-cta-image {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 300px;
+        align-self: center;
+    }
+
+    .k12-cta-content {
+        text-align: left;
+        width: 100%;
+        padding: 0;
+    }
+
+    .k12-cta-content h2 {
+        font-size: 26px;
+    }
+
+    .k12-cta-content p {
+        margin: 0 auto 24px;
+        font-size: 14px;
     }
 
     /* Footer */
@@ -2695,22 +2759,32 @@
 
     /* K-12 CTA Section - Mobile */
     .k12-cta-section {
-        padding: 50px 0;
+        padding: 50px 15px;
+        overflow: hidden;
     }
 
     .k12-cta-card {
         border-radius: 20px;
         min-height: auto;
-        padding: 40px 24px;
-        gap: 30px;
+        padding: 35px 24px;
+        gap: 25px;
+        flex-direction: column;
+        align-items: flex-start;
+        box-sizing: border-box;
     }
 
     .k12-cta-image {
-        max-width: 300px;
+        max-width: 280px;
+        align-self: center;
+        width: 100%;
     }
 
     .k12-cta-content {
         max-width: 100%;
+        text-align: left;
+        padding: 0 0 0 10px;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .k12-cta-content h2 {
@@ -2720,17 +2794,74 @@
     }
 
     .k12-cta-content p {
-        font-size: 15px;
+        font-size: 14px;
         margin-bottom: 24px;
         line-height: 1.6;
     }
 
     .k12-cta-content .btn-learn-more {
-        padding: 14px 28px;
-        font-size: 14px;
-        width: 100%;
-        justify-content: center;
+        padding: 12px 18px;
+        font-size: 13px;
     }
+
+    .k12-cta-content .btn-learn-more span {
+        font-size: 13px;
+    }
+}
+
+/* Extra Small Mobile - 480px */
+@media (max-width: 480px) {
+    .k12-cta-section {
+        padding: 40px 15px;
+        overflow: hidden;
+    }
+
+    .k12-cta-card {
+        padding: 30px 20px;
+        gap: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        box-sizing: border-box;
+    }
+
+    .k12-cta-image {
+        max-width: 250px;
+        align-self: center;
+        width: 100%;
+    }
+
+    .k12-cta-content {
+        text-align: left;
+        padding: 0 0 0 8px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .k12-cta-content h2 {
+        font-size: 22px;
+        margin-bottom: 14px;
+    }
+
+    .k12-cta-content p {
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+
+    .k12-cta-content .btn-learn-more {
+        padding: 10px 16px;
+        font-size: 12px;
+        min-height: 40px;
+    }
+
+    .k12-cta-content .btn-learn-more::before {
+        width: 40px;
+        height: 40px;
+    }
+
+    .k12-cta-content .btn-learn-more span {
+        font-size: 12px;
+    }
+}
 }
 
 /* K-12 Stats Counter - Responsive */
@@ -3285,6 +3416,48 @@
 
 /* Extra Small Mobile (320px) */
 @media (max-width: 320px) {
+    .k12-cta-section {
+        padding: 35px 10px;
+    }
+
+    .k12-cta-card {
+        padding: 25px 15px;
+        border-radius: 16px;
+    }
+
+    .k12-cta-image {
+        max-width: 220px;
+    }
+
+    .k12-cta-content {
+        padding: 0 0 0 5px;
+    }
+
+    .k12-cta-content h2 {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+
+    .k12-cta-content p {
+        font-size: 12px;
+        margin-bottom: 18px;
+    }
+
+    .k12-cta-content .btn-learn-more {
+        padding: 8px 14px;
+        font-size: 11px;
+        min-height: 36px;
+    }
+
+    .k12-cta-content .btn-learn-more::before {
+        width: 36px;
+        height: 36px;
+    }
+
+    .k12-cta-content .btn-learn-more span {
+        font-size: 11px;
+    }
+
     .educators-header h2 {
         font-size: 22px;
     }

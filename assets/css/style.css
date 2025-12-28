@@ -5504,6 +5504,11 @@ main{
 .k12-cta-section {
     padding: 80px 0;
     background: #ffffff;
+    overflow: hidden;
+}
+
+.k12-cta-section .container {
+    overflow: visible;
 }
 
 .k12-cta-card {
@@ -5521,6 +5526,7 @@ main{
     width: 100%;
     margin: 0 auto;
     padding: 50px 80px 50px 60px;
+    box-sizing: border-box;
 }
 
 .k12-cta-image {
