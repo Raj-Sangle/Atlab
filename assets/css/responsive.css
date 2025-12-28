@@ -1797,135 +1797,51 @@
    K-12 SOLUTIONS TABS - RESPONSIVE
    ============================================ */
 
+/* Large Tablet / Small Desktop */
+@media (max-width: 1280px) {
+    .k12-tab-content.active {
+        padding: 50px 240px 50px 40px;
+        margin-right: 180px;
+    }
+
+    .k12-content-right {
+        right: -160px;
+        flex: 0 0 420px;
+        max-width: 420px;
+    }
+
+    .image-carousel {
+        height: 360px;
+    }
+}
+
 /* Tablet */
 @media (max-width: 1024px) {
-    .k12-solutions-section {
-        padding: 60px 0;
-    }
-
-    .k12-tabs-wrapper {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .k12-tab-buttons {
-        flex-direction: row;
-        overflow-x: auto;
-        overflow-y: hidden;
-        width: 100%;
-        padding-bottom: 10px;
-        padding-right: 20px;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: thin;
-        scroll-behavior: smooth;
-        display: flex;
-        flex-wrap: nowrap;
-    }
-
-    .k12-tab-buttons::-webkit-scrollbar {
-        height: 6px;
-    }
-
-    .k12-tab-buttons::-webkit-scrollbar-track {
-        background: #f1f1f1;
-        border-radius: 10px;
-    }
-
-    .k12-tab-buttons::-webkit-scrollbar-thumb {
-        background: #888;
-        border-radius: 10px;
-    }
-
-    .k12-tab-btn {
-        min-width: 220px;
-        max-width: 220px;
-        width: 220px;
-        flex-shrink: 0;
-        flex-grow: 0;
-    }
-
-    .k12-tab-btn.active {
-        width: 280px;
-        max-width: 280px;
-    }
-
-    .k12-tab-content.active {
-        flex-direction: column;
-        gap: 30px;
-        padding: 40px;
-        margin-right: 0;
-        min-height: auto;
-    }
-
-    .k12-content-left {
-        max-width: 100%;
-        min-height: auto;
-    }
-
     .k12-content-left h3 {
         font-size: 28px;
         margin-bottom: 16px;
     }
 
     .k12-content-left > p {
-        font-size: 15px;
-        max-width: 100%;
+        font-size: 14px;
+        margin-bottom: 20px;
     }
-
-    .k12-content-right {
-        position: relative;
-        right: auto;
-        top: auto;
-        transform: none;
-        max-width: 100%;
-        width: 100%;
-        flex: 1;
-    }
-
-    .image-carousel {
-        height: 300px;
+    
+    .featured-partners {
+        margin-top: 24px;
+        margin-bottom: 0;
     }
 }
 
 /* Mobile */
 @media (max-width: 768px) {
-    .k12-solutions-section {
-        padding: 40px 0;
-    }
-
-    .k12-tabs-wrapper {
-        gap: 20px;
-    }
-
-    .k12-tab-buttons {
-        gap: 8px;
-        padding-right: 20px;
-    }
-
-    .k12-tab-btn {
-        min-width: 180px;
-        max-width: 180px;
-        padding: 14px 18px;
-        font-size: 14px;
-    }
-
-    .k12-tab-btn .tab-icon-wrapper {
-        font-size: 20px;
-    }
-
-    .k12-tab-content.active {
-        padding: 30px 20px;
-        gap: 24px;
-    }
-
     .k12-content-left h3 {
-        font-size: 24px;
+        font-size: 22px;
         margin-bottom: 12px;
     }
 
     .k12-content-left > p {
-        font-size: 14px;
-        margin-bottom: 0;
+        font-size: 13px;
         line-height: 1.6;
     }
 
@@ -1940,14 +1856,12 @@
 
     .partner-logos {
         gap: 16px;
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
     }
 
     .partner-logos img {
-        height: 32px;
-    }
-
-    .image-carousel {
-        height: 250px;
+        height: 30px;
+        max-width: 100px;
     }
 
     .carousel-dots {
@@ -1962,46 +1876,38 @@
 
 /* Small Mobile */
 @media (max-width: 480px) {
-    .k12-tab-buttons {
-        gap: 6px;
-        padding-right: 16px;
-    }
-
-    .k12-tab-btn {
-        min-width: 160px;
-        max-width: 160px;
-        padding: 12px 16px;
-        font-size: 13px;
-        gap: 8px;
-    }
-
-    .k12-tab-content.active {
-        padding: 24px 16px;
-    }
-
     .k12-content-left h3 {
-        font-size: 20px;
+        font-size: 18px;
+        margin-bottom: 10px;
     }
 
     .k12-content-left > p {
-        font-size: 13px;
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    .featured-partners {
+        margin-top: 16px;
     }
 
     .featured-partners h4 {
         font-size: 11px;
+        margin-bottom: 10px;
     }
 
     .partner-logos {
         gap: 12px;
+        grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
     }
 
     .partner-logos img {
-        height: 28px;
+        height: 26px;
+        max-width: 90px;
     }
 
-    .image-carousel {
-        height: 220px;
-        border-radius: 16px;
+    .carousel-dots .dot {
+        width: 5px;
+        height: 5px;
     }
 }
 
