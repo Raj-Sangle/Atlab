@@ -343,6 +343,39 @@
         display: none;
     }
 
+    /* ATLAB's Edge Section - 1024px */
+    .atlab-edge-section {
+        padding: 80px 0 60px;
+    }
+
+    .edge-header h2 {
+        font-size: 34px;
+    }
+
+    .edge-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px 30px;
+    }
+
+    .edge-card {
+        padding: 15px;
+    }
+
+    .edge-icon {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 20px;
+    }
+
+    .edge-card h3 {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+
+    .edge-card p {
+        font-size: 13px;
+    }
+
     /* Footer */
     .footer-content {
         grid-template-columns: 1fr 1fr;
@@ -2456,6 +2489,41 @@
     .btn-educator {
         margin-left: 0;
     }
+
+    /* ATLAB's Edge Section - 768px */
+    .atlab-edge-section {
+        padding: 60px 0 50px;
+    }
+
+    .edge-header h2 {
+        font-size: 32px;
+        margin-bottom: 50px;
+    }
+
+    .edge-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px 25px;
+    }
+
+    .edge-card {
+        padding: 10px;
+    }
+
+    .edge-icon {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 18px;
+    }
+
+    .edge-card h3 {
+        font-size: 17px;
+        margin-bottom: 10px;
+    }
+
+    .edge-card p {
+        font-size: 13px;
+        max-width: 280px;
+    }
 }
 
 /* Small Mobile */
@@ -2571,6 +2639,41 @@
         justify-content: center;
     }
 
+    /* ATLAB's Edge Section - 480px */
+    .atlab-edge-section {
+        padding: 50px 0 40px;
+    }
+
+    .edge-header h2 {
+        font-size: 26px;
+        margin-bottom: 40px;
+    }
+
+    .edge-cards {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .edge-card {
+        padding: 10px;
+    }
+
+    .edge-icon {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 16px;
+    }
+
+    .edge-card h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .edge-card p {
+        font-size: 14px;
+        max-width: 100%;
+    }
+
     /* K-12 CTA Section - Mobile */
     .k12-cta-section {
         padding: 50px 0;
@@ -2658,7 +2761,7 @@
     }
 
     .k12-stat-item .stat-value[data-text="ISO"] {
-        font-size: 42px;
+        font-size: 38px;
     }
 }
 
@@ -2680,7 +2783,7 @@
     }
 
     .k12-stat-item .stat-value[data-text="ISO"] {
-        font-size: 36px;
+        font-size: 32px;
     }
 
     /* K-12 CTA Section */
@@ -3243,5 +3346,35 @@
     .educators-cta p {
         font-size: 13px;
         margin: 12px 0;
+    }
+
+    /* ATLAB's Edge Section - 360px */
+    .atlab-edge-section {
+        padding: 40px 0 30px;
+    }
+
+    .edge-header h2 {
+        font-size: 24px;
+        margin-bottom: 35px;
+    }
+
+    .edge-cards {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .edge-icon {
+        width: 65px;
+        height: 65px;
+        margin-bottom: 14px;
+    }
+
+    .edge-card h3 {
+        font-size: 17px;
+        margin-bottom: 8px;
+    }
+
+    .edge-card p {
+        font-size: 13px;
     }
 }
