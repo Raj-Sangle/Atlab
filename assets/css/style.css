@@ -2509,7 +2509,7 @@ main{
 /* Success Stories Section */
 .success-stories-section {
     padding: 80px 0;
-    background-color: #f8f9fa;
+    background-color: #ffffff;
 }
 
 .success-stories-section .container {
@@ -2524,11 +2524,17 @@ main{
 }
 
 .success-stories-header h2 {
-    font-size: 32px;
+    font-size: 40px;
     font-weight: 700;
-    color: #333;
+    color: #000000;
     line-height: 1.2;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+.success-stories-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
 }
 
 .success-stories-grid {
@@ -2537,150 +2543,70 @@ main{
     gap: 30px;
 }
 
-.success-stories-wrapper {
-    position: relative;
-}
-
 .success-stories-actions {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    margin-top: 36px;
+    display: none;
 }
 
 .success-stories-view-all {
-    display: flex;
-    justify-content: center;
+    display: none;
 }
 
 .success-stories-slider-controls {
     display: none;
 }
 
-/* Responsive grid adjustments */
-.success-stories-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-
-@media (max-width: 1024px) {
-    .success-stories-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .success-stories-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Desktop slider behavior */
-@media (min-width: 1025px) {
+/* Desktop and Laptop Carousel - Continuous Auto Scroll */
+@media (min-width: 1024px) {
     .success-stories-section {
-        overflow-x: hidden;
+        overflow: hidden;
         width: 100%;
     }
 
     .success-stories-section .container {
-        padding: 0 50px;
-        max-width: 1600px;
+        padding: 0 40px;
+        max-width: 100%;
         width: 100%;
         box-sizing: border-box;
     }
 
     .success-stories-wrapper {
         overflow: hidden;
+        width: 100%;
+        position: relative;
     }
 
     .success-stories-grid.success-stories-slider {
         display: flex;
         gap: 30px;
-        overflow-x: hidden;
-        scroll-behavior: smooth;
-        width: 100%;
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
+        width: max-content;
+        animation: continuousScroll 20s linear infinite;
+        will-change: transform;
+    }
+
+    @keyframes continuousScroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    .success-stories-grid.success-stories-slider:hover {
+        animation-play-state: paused;
     }
 
     .success-stories-grid.success-stories-slider .story-card {
-        flex: 0 0 calc(100% / 3);
-        max-width: calc(100% / 3);
-        min-width: 0;
-        flex-shrink: 0;
+        flex: 0 0 380px;
+        width: 380px;
+        min-width: 380px;
+        max-width: 380px;
         margin: 0;
-    }
-
-    .success-stories-grid.success-stories-slider .story-card * {
-        max-width: 100%;
         box-sizing: border-box;
     }
 
-    .success-stories-grid.success-stories-slider .story-card.cloned {
-        display: block;
-    }
-
-    .success-stories-slider-controls {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    .success-stories-slider-controls .slider-btn {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, #ffc107 0%, #ff8c00 100%);
-        border: none;
-        color: #fff;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-        box-shadow: 0 4px 12px rgba(255, 140, 0, 0.3);
-        flex-shrink: 0;
-    }
-
-    .success-stories-slider-controls .slider-btn svg {
-        stroke: #fff;
-        stroke-width: 2.5;
-        width: 24px;
-        height: 24px;
-    }
-
-    .success-stories-slider-controls .slider-btn:hover {
-        transform: scale(1.1);
-        box-shadow: 0 6px 20px rgba(255, 140, 0, 0.4);
-        background: linear-gradient(135deg, #ffd54f 0%, #ff9800 100%);
-    }
-
-    .success-stories-slider-controls .slider-btn:active {
-        transform: scale(0.96);
-        box-shadow: 0 3px 8px rgba(255, 140, 0, 0.25);
-    }
-
-    .success-stories-slider-controls .slider-dots {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .success-stories-slider-controls .slider-dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: #e5e7eb;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-    .success-stories-slider-controls .slider-dot.active {
-        background: #ff8c00;
-        width: 30px;
-        border-radius: 5px;
+    .success-stories-grid.success-stories-slider .story-card * {
+        box-sizing: border-box;
     }
 }
 
@@ -2693,6 +2619,7 @@ main{
     display: flex;
     flex-direction: column;
     height: 100%;
+    min-height: 520px;
 }
 
 .story-card:hover {
@@ -2706,6 +2633,7 @@ main{
     height: 250px;
     overflow: hidden;
     background-color: #e5e7eb;
+    flex-shrink: 0;
 }
 
 .story-image-wrapper img {
@@ -2721,7 +2649,7 @@ main{
 
 .story-date {
     position: absolute;
-       top: 15px;
+    top: 15px;
     left: 15px;
     background-color: #8b5cf6;
     color: #fff;
@@ -2729,7 +2657,7 @@ main{
     border-radius: 8px;
     font-size: 14px;
     font-weight: 600;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .story-content {
@@ -2737,23 +2665,27 @@ main{
     flex: 1;
     display: flex;
     flex-direction: column;
+    min-height: 270px;
 }
 
 .story-content h3 {
-    font-size: 20px;
-    font-weight: 700;
-    color: #111827;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000000;
     margin-bottom: 15px;
     line-height: 1.4;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    min-height: 50px;
 }
 
 .story-content p {
-    font-size: 14px;
-    line-height: 1.7;
-    color: #4b5563;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #666666;
     margin-bottom: 20px;
     flex: 1;
+    font-family: 'Poppins', sans-serif;
+    min-height: 80px;
 }
 
 .story-content .btn-explore {

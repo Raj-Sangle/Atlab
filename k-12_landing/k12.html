@@ -1425,276 +1425,42 @@
             observer.observe(k12StatsSection);
         }
 
-        // Success Stories Slider (mirrors projects slider)
+        // Success Stories Slider - Continuous Auto Carousel
         const successStoriesSlider = document.querySelector('.success-stories-slider');
-        const successStoriesControls = document.querySelector('.success-stories-slider-controls');
 
-        if (successStoriesSlider && successStoriesControls) {
-            const prevBtn = successStoriesControls.querySelector('.slider-prev');
-            const nextBtn = successStoriesControls.querySelector('.slider-next');
-            const dotsContainer = successStoriesControls.querySelector('.slider-dots');
-
-            let currentIndex = 0;
-            let isTransitioning = false;
-            let originalCards = [];
-            let isDesktop = window.innerWidth >= 1025;
+        if (successStoriesSlider) {
+            let isDesktop = window.innerWidth >= 1024;
 
             function initializeStoriesSlider() {
-                isDesktop = window.innerWidth >= 1025;
-                dotsContainer.innerHTML = '';
+                isDesktop = window.innerWidth >= 1024;
 
                 if (isDesktop) {
+                    // Remove existing clones
                     const existingClones = successStoriesSlider.querySelectorAll('.story-card.cloned');
                     existingClones.forEach(clone => clone.remove());
 
-                    originalCards = Array.from(successStoriesSlider.querySelectorAll('.story-card:not(.cloned)'));
+                    // Get original cards
+                    const originalCards = Array.from(successStoriesSlider.querySelectorAll('.story-card:not(.cloned)'));
 
-                    originalCards.slice().reverse().forEach(card => {
-                        const clone = card.cloneNode(true);
-                        clone.classList.add('cloned');
-                        successStoriesSlider.insertBefore(clone, successStoriesSlider.firstChild);
-                    });
-
+                    // Clone all cards twice for seamless infinite scroll
                     originalCards.forEach(card => {
                         const clone = card.cloneNode(true);
                         clone.classList.add('cloned');
                         successStoriesSlider.appendChild(clone);
                     });
 
-                    const totalGroups = Math.ceil(originalCards.length / 3);
-                    for (let i = 0; i < totalGroups; i++) {
-                        const dot = document.createElement('div');
-                        dot.className = 'slider-dot';
-                        if (i === 0) dot.classList.add('active');
-                        dot.addEventListener('click', () => goToStoriesGroup(i));
-                        dotsContainer.appendChild(dot);
-                    }
-
-                    setTimeout(() => {
-                        const cardWidth = successStoriesSlider.offsetWidth / 3;
-                        const gap = 30;
-                        const originalWidth = originalCards.length * (cardWidth + gap);
-                        successStoriesSlider.scrollLeft = originalWidth;
-                        currentIndex = 0;
-                        updateStoriesDesktopDots();
-                    }, 100);
+                    // Clone again for extra smooth scrolling
+                    originalCards.forEach(card => {
+                        const clone = card.cloneNode(true);
+                        clone.classList.add('cloned');
+                        successStoriesSlider.appendChild(clone);
+                    });
                 } else {
+                    // Remove clones on mobile/tablet
                     const existingClones = successStoriesSlider.querySelectorAll('.story-card.cloned');
                     existingClones.forEach(clone => clone.remove());
-
-                    const cards = successStoriesSlider.querySelectorAll('.story-card:not(.cloned)');
-                    cards.forEach((_, index) => {
-                        const dot = document.createElement('div');
-                        dot.className = 'slider-dot';
-                        if (index === 0) dot.classList.add('active');
-                        dot.addEventListener('click', () => goToStoriesSlide(index));
-                        dotsContainer.appendChild(dot);
-                    });
-
-                    updateStoriesMobileSlider();
                 }
             }
-
-            function updateStoriesDesktopSlider() {
-                if (!isDesktop) return;
-
-                const cardWidth = successStoriesSlider.offsetWidth / 3;
-                const gap = 30;
-                const singleCardWidth = cardWidth + gap;
-                const originalWidth = originalCards.length * singleCardWidth;
-
-                const scrollPosition = originalWidth + (currentIndex * singleCardWidth);
-
-                successStoriesSlider.scrollTo({
-                    left: scrollPosition,
-                    behavior: 'smooth'
-                });
-
-                updateStoriesDesktopDots();
-
-                setTimeout(() => {
-                    handleStoriesInfiniteScrollReset();
-                }, 600);
-            }
-
-            function handleStoriesInfiniteScrollReset() {
-                if (!isDesktop || originalCards.length === 0) return;
-
-                const scrollLeft = successStoriesSlider.scrollLeft;
-                const clientWidth = successStoriesSlider.offsetWidth;
-                const cardWidth = clientWidth / 3;
-                const gap = 30;
-                const singleCardWidth = cardWidth + gap;
-                const originalWidth = originalCards.length * singleCardWidth;
-
-                if (scrollLeft >= originalWidth * 2) {
-                    successStoriesSlider.scrollTo({
-                        left: scrollLeft - originalWidth,
-                        behavior: 'auto'
-                    });
-                } else if (scrollLeft < originalWidth) {
-                    successStoriesSlider.scrollTo({
-                        left: scrollLeft + originalWidth,
-                        behavior: 'auto'
-                    });
-                }
-            }
-
-            function updateStoriesMobileSlider() {
-                if (isDesktop) return;
-
-                const cards = successStoriesSlider.querySelectorAll('.story-card:not(.cloned)');
-                const isTablet = window.innerWidth >= 769 && window.innerWidth <= 1024;
-                const cardWidth = isTablet ? successStoriesSlider.offsetWidth / 2 : successStoriesSlider.offsetWidth;
-                const scrollPosition = currentIndex * cardWidth;
-
-                successStoriesSlider.scrollTo({
-                    left: scrollPosition,
-                    behavior: 'smooth'
-                });
-
-                updateStoriesMobileDots();
-            }
-
-            function updateStoriesDesktopDots() {
-                const dots = dotsContainer.querySelectorAll('.slider-dot');
-                const groupIndex = Math.floor(currentIndex / 3) % Math.ceil(originalCards.length / 3);
-                dots.forEach((dot, index) => {
-                    dot.classList.toggle('active', index === groupIndex);
-                });
-            }
-
-            function updateStoriesMobileDots() {
-                const dots = dotsContainer.querySelectorAll('.slider-dot');
-                dots.forEach((dot, index) => {
-                    dot.classList.toggle('active', index === currentIndex);
-                });
-            }
-
-            function goToStoriesGroup(groupIndex) {
-                if (isTransitioning || !isDesktop) return;
-                isTransitioning = true;
-                currentIndex = groupIndex * 3;
-                updateStoriesDesktopSlider();
-                setTimeout(() => {
-                    isTransitioning = false;
-                }, 600);
-            }
-
-            function goToStoriesSlide(index) {
-                if (isTransitioning || isDesktop) return;
-                const cards = successStoriesSlider.querySelectorAll('.story-card:not(.cloned)');
-                if (index < 0) index = cards.length - 1;
-                if (index >= cards.length) index = 0;
-
-                currentIndex = index;
-                updateStoriesMobileSlider();
-            }
-
-            function nextStoriesSlide() {
-                if (isTransitioning) return;
-                isTransitioning = true;
-
-                if (isDesktop) {
-                    const totalGroups = Math.ceil(originalCards.length / 3);
-                    const currentGroup = Math.floor(currentIndex / 3);
-                    const nextGroup = (currentGroup + 1) % totalGroups;
-                    currentIndex = nextGroup * 3;
-                    updateStoriesDesktopSlider();
-                } else {
-                    const cards = successStoriesSlider.querySelectorAll('.story-card:not(.cloned)');
-                    currentIndex = (currentIndex + 1) % cards.length;
-                    updateStoriesMobileSlider();
-                }
-
-                setTimeout(() => {
-                    isTransitioning = false;
-                }, 600);
-            }
-
-            function prevStoriesSlide() {
-                if (isTransitioning) return;
-                isTransitioning = true;
-
-                if (isDesktop) {
-                    const totalGroups = Math.ceil(originalCards.length / 3);
-                    const currentGroup = Math.floor(currentIndex / 3);
-                    const prevGroup = (currentGroup - 1 + totalGroups) % totalGroups;
-                    currentIndex = prevGroup * 3;
-                    updateStoriesDesktopSlider();
-                } else {
-                    const cards = successStoriesSlider.querySelectorAll('.story-card:not(.cloned)');
-                    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-                    updateStoriesMobileSlider();
-                }
-
-                setTimeout(() => {
-                    isTransitioning = false;
-                }, 600);
-            }
-
-            if (nextBtn) nextBtn.addEventListener('click', nextStoriesSlide);
-            if (prevBtn) prevBtn.addEventListener('click', prevStoriesSlide);
-
-            let touchStartX = 0;
-            let touchEndX = 0;
-
-            successStoriesSlider.addEventListener('touchstart', (e) => {
-                if (!isDesktop) {
-                    touchStartX = e.changedTouches[0].screenX;
-                }
-            }, { passive: true });
-
-            successStoriesSlider.addEventListener('touchend', (e) => {
-                if (!isDesktop) {
-                    touchEndX = e.changedTouches[0].screenX;
-                    handleStoriesSwipe();
-                }
-            }, { passive: true });
-
-            function handleStoriesSwipe() {
-                if (isDesktop) return;
-                const swipeThreshold = 50;
-                const diff = touchStartX - touchEndX;
-
-                if (Math.abs(diff) > swipeThreshold) {
-                    if (diff > 0) {
-                        nextStoriesSlide();
-                    } else {
-                        prevStoriesSlide();
-                    }
-                }
-            }
-
-            let storiesScrollTimeout;
-            successStoriesSlider.addEventListener('scroll', () => {
-                clearTimeout(storiesScrollTimeout);
-                storiesScrollTimeout = setTimeout(() => {
-                    if (isDesktop) {
-                        handleStoriesInfiniteScrollReset();
-
-                        const cardWidth = successStoriesSlider.offsetWidth / 3;
-                        const gap = 30;
-                        const singleCardWidth = cardWidth + gap;
-                        const originalWidth = originalCards.length * singleCardWidth;
-
-                        let relativeScroll = successStoriesSlider.scrollLeft - originalWidth;
-                        const newIndex = Math.max(0, Math.min(Math.floor(relativeScroll / singleCardWidth), originalCards.length - 1));
-                        if (newIndex !== currentIndex && newIndex >= 0 && newIndex < originalCards.length) {
-                            currentIndex = newIndex;
-                            updateStoriesDesktopDots();
-                        }
-                    } else {
-                        const isTablet = window.innerWidth >= 769 && window.innerWidth <= 1024;
-                        const cardWidth = isTablet ? successStoriesSlider.offsetWidth / 2 : successStoriesSlider.offsetWidth;
-                        const newIndex = Math.round(successStoriesSlider.scrollLeft / cardWidth);
-                        if (newIndex !== currentIndex) {
-                            currentIndex = newIndex;
-                            updateStoriesMobileDots();
-                        }
-                    }
-                }, 50);
-            }, { passive: true });
 
             let storiesResizeTimer;
             window.addEventListener('resize', () => {

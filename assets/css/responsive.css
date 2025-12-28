@@ -797,12 +797,23 @@
     }
 
     .success-stories-header h2 {
-        font-size: 28px;
+        font-size: 32px;
     }
 
-    .success-stories-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
+    .success-stories-grid.success-stories-slider {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 24px !important;
+        animation: none !important;
+        transform: none !important;
+        width: 100% !important;
+    }
+
+    .success-stories-grid.success-stories-slider .story-card {
+        flex: none !important;
+        max-width: 100% !important;
+        min-width: auto !important;
+        width: 100% !important;
     }
 
     .story-content {
@@ -810,7 +821,11 @@
     }
 
     .story-content h3 {
-        font-size: 18px;
+        font-size: 17px;
+    }
+
+    .story-content p {
+        font-size: 13px;
     }
 
     /* K-12 CTA Section - Tablet */
@@ -1211,17 +1226,30 @@
         padding: 50px 0;
     }
 
+    .success-stories-section .container {
+        padding: 0 20px;
+    }
+
     .success-stories-header {
         margin-bottom: 40px;
     }
 
     .success-stories-header h2 {
-        font-size: 24px;
+        font-size: 28px;
     }
 
-    .success-stories-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
+    .success-stories-grid.success-stories-slider {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+        animation: none !important;
+        transform: none !important;
+    }
+
+    .success-stories-grid.success-stories-slider .story-card {
+        flex: none !important;
+        max-width: 100% !important;
+        min-width: auto !important;
     }
 
     .story-image-wrapper {
@@ -1233,7 +1261,7 @@
     }
 
     .story-content h3 {
-        font-size: 18px;
+        font-size: 16px;
         margin-bottom: 12px;
     }
 
