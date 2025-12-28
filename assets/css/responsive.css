@@ -3050,3 +3050,34 @@
         font-size: 12px;
     }
 }
+
+/* Hero decorations responsive */
+@media (max-width: 1024px) {
+    .steam-banner-section .hero-rocket {
+        width: 80px;
+        left: 3%;
+    }
+    
+    .steam-banner-section .hero-flask {
+        width: 70px;
+        right: 3%;
+    }
+}
+
+@media (max-width: 768px) {
+    .steam-banner-section .hero-rocket {
+        width: 60px;
+        left: 2%;
+    }
+    
+    .steam-banner-section .hero-flask {
+        width: 50px;
+        right: 2%;
+    }
+}
+
+@media (max-width: 480px) {
+    .steam-banner-section .hero-decorations {
+        display: none;
+    }
+}
