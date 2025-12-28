@@ -894,7 +894,7 @@
         padding: 0;
     }
 
-    /* Steam Banner Section */
+    /* Steam Banner Section - Mobile */
     .steam-banner-section .cont {
         padding: 35px 25px 45px;
     }
@@ -914,17 +914,13 @@
     }
 
     .steam-banner-section .circles img:first-child {
-        left: 0;
-        top: 80%;
-        height: 8%;
-        max-height: 200px;
+        width: 150px;
+        height: 150px;
     }
 
     .steam-banner-section .circles img:last-child {
-        right: -5%;
-        top: 65%;
-        height: 12%;
-        max-height: 180px;
+        width: 200px;
+        height: 200px;
     }
 
     .partner-layout {
@@ -1413,7 +1409,7 @@
         width: auto;
     }
 
-    /* Steam Banner Section */
+    /* Steam Banner Section - Tablet */
     .steam-banner-section .cont {
         padding: 40px 30px 50px;
         max-width: 900px;
@@ -1428,17 +1424,13 @@
     }
 
     .steam-banner-section .circles img:first-child {
-        left: 0;
-        top: 80%;
-        height: 9%;
-        max-height: 230px;
+        width: 200px;
+        height: 200px;
     }
 
     .steam-banner-section .circles img:last-child {
-        right: -5%;
-        top: 50%;
-        height: 13%;
-        max-height: 200px;
+        width: 280px;
+        height: 280px;
     }
 }
 
@@ -2978,7 +2970,7 @@
         max-height: 150px;
     }
 
-    /* Steam Banner Section */
+    /* Steam Banner Section - Small Mobile */
     .steam-banner-section .cont {
         padding: 30px 20px 40px;
     }
@@ -2993,22 +2985,18 @@
     .steam-banner-section .cont p {
         font-size: 13px;
         line-height: 1.6;
-                position: relative;
+        position: relative;
         right: 15px;
     }
 
     .steam-banner-section .circles img:first-child {
-        left: 0;
-        top: 39%;
-        height: 7%;
-        max-height: 120px;
+        width: 120px;
+        height: 120px;
     }
 
     .steam-banner-section .circles img:last-child {
-        right: -5%;
-        top: 35%;
-        height: 10%;
-        max-height: 100px;
+        width: 160px;
+        height: 160px;
     }
 
 /* Extra Small Mobile (320px) */
