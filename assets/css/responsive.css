@@ -2713,38 +2713,70 @@
 }
 
 /* K-12 Stats Counter - Responsive */
+/* K-12 Stats Counter - Responsive */
 @media (max-width: 1024px) {
     .k12-stats-section {
-        padding: 70px 0;
+        padding: 80px 0;
+        min-height: 450px;
+    }
+
+    .k12-stats-section .container {
+        padding-left: 40px;
+        padding-right: 40px;
     }
 
     .k12-stats-grid {
         gap: 45px 80px;
+        max-width: 650px;
+        margin-left: 40px;
+    }
+
+    .k12-stat-item {
+        gap: 18px;
     }
 
     .k12-stat-item:nth-child(even)::before {
         left: -40px;
+        top: -22px;
+        height: calc(100% + 44px);
     }
 
     .k12-stat-item .stat-value {
-        font-size: 42px;
+        font-size: 32px;
+        min-width: 100px;
     }
 
     .k12-stat-item .stat-label {
-        font-size: 14px;
-        max-width: 200px;
+        font-size: 13px;
+        max-width: 150px;
+    }
+
+    .k12-stat-item .stat-value[data-text="ISO"] {
+        font-size: 32px;
     }
 }
 
 @media (max-width: 768px) {
     .k12-stats-section {
         padding: 60px 0;
+        min-height: auto;
+    }
+
+    .k12-stats-section .container {
+        padding-left: 30px;
+        padding-right: 30px;
+        min-height: auto;
     }
 
     .k12-stats-grid {
         grid-template-columns: 1fr;
         gap: 40px;
-        max-width: 400px;
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    .k12-stat-item {
+        gap: 16px;
     }
 
     .k12-stat-item:nth-child(even)::before {
@@ -2752,16 +2784,17 @@
     }
 
     .k12-stat-item .stat-value {
-        font-size: 38px;
+        font-size: 28px;
+        min-width: 90px;
     }
 
     .k12-stat-item .stat-label {
-        font-size: 14px;
+        font-size: 13px;
         max-width: 100%;
     }
 
     .k12-stat-item .stat-value[data-text="ISO"] {
-        font-size: 38px;
+        font-size: 28px;
     }
 }
 
@@ -2770,20 +2803,30 @@
         padding: 50px 0;
     }
 
+    .k12-stats-section .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
     .k12-stats-grid {
         gap: 35px;
     }
 
+    .k12-stat-item {
+        gap: 14px;
+    }
+
     .k12-stat-item .stat-value {
-        font-size: 32px;
+        font-size: 24px;
+        min-width: 80px;
     }
 
     .k12-stat-item .stat-label {
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .k12-stat-item .stat-value[data-text="ISO"] {
-        font-size: 32px;
+        font-size: 24px;
     }
 
     /* K-12 CTA Section */
