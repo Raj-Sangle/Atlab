@@ -4092,8 +4092,9 @@ main{
 .k12-tab-buttons {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    min-width: 280px;
+    gap: 30px;
+    min-width: 320px;
+    max-width: 320px;
     flex-shrink: 0;
 }
 
@@ -4101,12 +4102,12 @@ main{
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 18px 24px;
+    padding: 24px 24px;
     border: none;
     border-radius: 12px;
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 800;
     color: #ffffff;
     text-align: left;
     cursor: pointer;
@@ -4114,6 +4115,8 @@ main{
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
+    min-width: 280px;
+    max-width: 280px;
 }
 
 .k12-tab-btn::before {
@@ -4132,7 +4135,8 @@ main{
 }
 
 .k12-tab-btn.active {
-    transform: translateX(8px);
+    min-width: 320px;
+    max-width: 320px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
@@ -4162,25 +4166,18 @@ main{
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     background: #ffffff;
     color: #1f2937;
-    opacity: 0;
-    transform: scale(0.8);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     flex-shrink: 0;
+    margin-left: auto;
 }
 
 .k12-tab-btn.active .tab-arrow-icon {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.k12-tab-btn.fc-yellow .tab-arrow-icon {
-    background: #1f2937;
-    color: #ffffff;
+    display: flex;
 }
 
 /* Tab Button Colors - matching the feature cards */
