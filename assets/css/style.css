@@ -5126,14 +5126,34 @@ main{
    =================================== */
 
 .atlab-edge-section {
-    background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
+    background: #ffffff;
     position: relative;
     margin-top: -80px;
+    padding: 100px 0 80px;
+    overflow: visible;
+}
+
+.edge-decoration-circle {
+    position: absolute;
+    top: -80px;
+    right: -75px;
+    width: 250px;
+    height: 250px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.edge-decoration-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .edge-header {
     text-align: center;
     margin-bottom: 60px;
+    position: relative;
+    z-index: 2;
 }
 
 .edge-header h2 {
@@ -5349,12 +5369,10 @@ main{
 
 /* Educators CTA Section */
 .educators-cta {
-    /* text-align: center; */
-    /* background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%); */
-    padding: 60px 40px;
+    padding: 60px 0;
     border-radius: 20px;
-    max-width: 1000px;
-    margin: 0 auto;
+    max-width: 1200px;
+    margin: 60px auto 0;
 }
 
 .educators-cta h3 {
@@ -5362,24 +5380,24 @@ main{
     font-size: 36px;
     font-weight: 700;
     color: #000;
-    margin-bottom: 15px;
-    line-height: 1.5;
+    margin-bottom: 20px;
+    line-height: 1.3;
 }
 
 .educators-cta p {
     font-family: "Poppins", sans-serif;
     font-size: 16px;
     color: #000;
-    max-width: 700px;
-    margin: 20px;
-    line-height: 1.7;
-    margin-right: 0;
+    max-width: 650px;
+    margin: 0;
+    line-height: 1.8;
+    padding-right: 40px;
 }
 
 .cta-content-wrapper {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 40px;
 }
 
 /* Button for educators section - based on hero button style */

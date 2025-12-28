@@ -338,6 +338,11 @@
         font-size: 14px;
     }
 
+    /* Hide decorative circle on smaller screens */
+    .edge-decoration-circle {
+        display: none;
+    }
+
     /* Footer */
     .footer-content {
         grid-template-columns: 1fr 1fr;
