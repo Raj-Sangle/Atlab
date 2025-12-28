@@ -2633,8 +2633,13 @@
 /* Max Width 1024px */
 @media (max-width: 1024px) {
     .learning-reaches-section {
-        background-size: 100% 600px;
         padding: 50px 0 400px;
+        min-height: 500px;
+    }
+    
+    .learning-bg-image {
+        object-fit: cover;
+        transform: none !important;
     }
 
     .learning-wave-bg {
@@ -2681,8 +2686,13 @@
 /* Max Width 768px */
 @media (max-width: 768px) {
     .learning-reaches-section {
-        background-size: 100% 500px;
         padding: 40px 0 360px;
+        min-height: 450px;
+    }
+    
+    .learning-bg-image {
+        object-fit: cover;
+        transform: none !important;
     }
 
     .learning-wave-bg {
@@ -2790,8 +2800,13 @@
 /* Max Width 480px */
 @media (max-width: 480px) {
     .learning-reaches-section {
-        background-size: 100% 400px;
         padding: 30px 0 340px;
+        min-height: 400px;
+    }
+    
+    .learning-bg-image {
+        object-fit: cover;
+        transform: none !important;
     }
 
     .learning-wave-bg {
