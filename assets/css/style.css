@@ -169,12 +169,12 @@ main{
     width: 100% !important;
     background-color: #fff !important;
     z-index: 10000 !important;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    box-shadow: none !important;
     transition: box-shadow 0.3s ease !important;
 }
 
 .sticky-header.scrolled {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    box-shadow: none !important;
 }
 .top-bar {
     background-color: #ff8c00; /* A shade of orange, can be adjusted */
@@ -211,6 +211,9 @@ main{
     justify-content: space-between;
     align-items: center;
     padding: 15px 40px;
+    width: 100%;
+    max-width: none;
+    gap: 100px;
 }
 
 .logo a {
@@ -232,35 +235,59 @@ main{
     list-style: none;
     margin: 0;
     padding: 0;
+    gap: 30px;
 }
 
 .nav-links li {
-    margin: 0 10px;
+    margin: 0;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #333;
-    font-weight: 500;
+    color: rgba(8, 67, 70, 1);
+    font-weight: 600;
     position: relative;
     font-size: 14px;
+    white-space: nowrap;
+}
+
+.nav-links a:hover {
+    color: rgba(8, 67, 70, 0.8);
 }
 
 .nav-actions {
     display: flex;
     align-items: center;
+    gap: 25px;
+    margin-left: -60px;
 }
 
 /* Basic button styling */
 .btn {
     border: none;
-    padding: 10px 25px;
+    padding: 8px 20px;
     border-radius: 20px;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 500;
+    font-size: 14px;
+    white-space: nowrap;
 }
 
-/* Action Button Specifics */
+/* Orange Button Styling */
+.btn-orange {
+    background-color: #ff8c00;
+    color: #fff;
+    border: 1px solid #ff8c00;
+    text-decoration: none;
+}
+
+.btn-orange:hover {
+    background-color: #e67e00;
+    border: 1px solid #e67e00;
+    transition: all 0.3s ease;
+}
+
+/* Action Button Specifics - Keep for backward compatibility */
 .btn-primary {
     background-color: #ff8c00;
     color: #fff;
@@ -279,25 +306,32 @@ main{
 .search-container {
     display: flex;
     align-items: center;
-    background-color: #f2f2f2;
-    border-radius: 20px;
-    padding: 0 5px 0 15px;
-    margin: 0 10px;
+    background-color: #000000;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    justify-content: center;
+    margin: 0;
 }
 
 .search-container input {
-    border: none;
-    background: transparent;
-    outline: none;
-    padding: 10px 0;
+    display: none;
 }
 
 .search-container .search-btn {
     border: none;
     background: transparent;
     cursor: pointer;
-    padding: 10px;
-    font-size: 16px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-container .search-btn svg {
+    stroke: #ffffff;
+    width: 16px;
+    height: 16px;
 }
 
 /* Top Bar Specifics */
@@ -367,6 +401,10 @@ main{
 .nav-content {
     display: flex;
     align-items: center;
+    gap: 80px;
+    flex: 1;
+    justify-content: space-between;
+    max-width: none;
 }
 
 .hamburger-menu {
@@ -374,22 +412,29 @@ main{
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0;
-    z-index: 1001; /* To be on top of the nav content */
+    padding: 5px;
+    z-index: 10001; /* To be on top of the nav content */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    position: relative;
 }
 
 .hamburger-menu span {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: #333;
-    margin: 5px 0;
-    transition: 0.4s;
+    background-color: rgba(8, 67, 70, 1);
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
 }
 
 /* Hamburger animation to 'X' */
 .hamburger-menu.open span:nth-child(1) {
     transform: rotate(-45deg) translate(-5px, 6px);
+    background-color: rgba(8, 67, 70, 1);
 }
 
 .hamburger-menu.open span:nth-child(2) {
@@ -398,6 +443,7 @@ main{
 
 .hamburger-menu.open span:nth-child(3) {
     transform: rotate(45deg) translate(-5px, -6px);
+    background-color: rgba(8, 67, 70, 1);
 }
 
 

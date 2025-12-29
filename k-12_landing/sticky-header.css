@@ -8,14 +8,14 @@
     width: 100% !important;
     background-color: #fff !important;
     z-index: 10000 !important;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    box-shadow: none !important;
     transition: box-shadow 0.3s ease !important;
     margin: 0 !important;
     padding: 0 !important;
 }
 
 .sticky-header.scrolled {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    box-shadow: none !important;
 }
 
 /* Add padding to body so content doesn't hide under fixed header */
@@ -25,7 +25,7 @@ body {
 
 /* Enhanced shadow when scrolled */
 .sticky-header.scrolled {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    box-shadow: none !important;
 }
 
 /* Ensure body doesn't interfere */
