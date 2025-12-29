@@ -2,6 +2,14 @@
    RESPONSIVE STYLES - ALL MEDIA QUERIES
    ============================================ */
 
+/* Large Screens 1440px and above */
+@media (min-width: 1440px) {
+    .steam-banner-section .cont h2 {
+        font-size: 48px !important;
+        line-height: 1.15;
+    }
+}
+
 /* Max Width 1200px */
 @media (max-width: 1200px) {
     .container {
@@ -165,9 +173,6 @@
         display: none;
     }
 
-    .illustration-mobile {
-        /* display: block; */
-    }
     .tab-illustration {
         flex-basis: auto;
         width: 100%;
@@ -215,11 +220,6 @@
     /* Stats Section */
     .stats-section {
         padding: 80px 0;
-    }
-
-    .stats-bg-image {
-        /* width: 40%; */
-        /* opacity: 0.25; */
     }
 
     .stats-content {
@@ -1107,10 +1107,6 @@
         padding: 50px 0;
     }
 
-    .stats-bg-image {
-        /* opacity: 0.15; */
-    }
-
     .stats-content {
         min-height: 300px;
     }
@@ -1155,11 +1151,12 @@
 
     /* Steam Banner Section - Mobile */
     .steam-banner-section .cont {
-        padding: 35px 25px 45px;
+        padding: 35px 15px 45px;
+        text-align: center;
     }
 
     .steam-banner-section .cont h2 {
-        font-size: 42px !important;
+        font-size: 32px !important;
         line-height: 1.2;
         font-weight: 900 !important;
     }
@@ -1683,12 +1680,13 @@
 
     /* Steam Banner Section - Tablet */
     .steam-banner-section .cont {
-        padding: 40px 30px 50px;
+        padding: 40px 20px 50px;
         max-width: 900px;
+        text-align: center;
     }
 
     .steam-banner-section .cont h2 {
-        font-size: 46px !important;
+        font-size: 38px !important;
         font-weight: 900 !important;
         line-height: 1.2;
     }
@@ -3043,7 +3041,6 @@
         font-size: 12px;
     }
 }
-}
 
 /* K-12 Stats Counter - Responsive */
 /* K-12 Stats Counter - Responsive */
@@ -3568,14 +3565,14 @@
 
     /* Steam Banner Section - Small Mobile */
     .steam-banner-section .cont {
-        padding: 30px 20px 40px;
+        padding: 30px 10px 40px;
+        text-align: center;
     }
 
     .steam-banner-section .cont h2 {
-        font-size: 20px;
+        font-size: 18px;
         margin-bottom: 16px;
-        position: relative;
-        right: 8px;
+        font-weight: 900 !important;
     }
 
     .steam-banner-section .cont p {
@@ -3713,6 +3710,7 @@
 
     .steam-banner-section .cont h2 {
         font-size: 24px;
+        font-weight: 900 !important;
     }
 
     .steam-banner-section .cont p {
