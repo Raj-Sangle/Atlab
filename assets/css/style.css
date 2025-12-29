@@ -2907,26 +2907,29 @@ main{
 }
 
 .footer-subscription {
-    display: flex;
-    align-items: center;
-    gap: 0;
-    background-color: #ffffff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
     width: 260px;
     flex-shrink: 0;
 }
 
+.subscription-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
 .subscribe-input {
-    flex: 1;
+    width: 100%;
     background-color: #ffffff;
     border: none;
-    padding: 12px 16px;
+    border-radius: 8px;
+    padding: 12px 50px 12px 16px;
     color: #333333;
     font-size: 12px;
     outline: none;
     font-family: 'Poppins', sans-serif;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .subscribe-input::placeholder {
@@ -2934,27 +2937,33 @@ main{
     font-size: 12px;
 }
 
-.subscribe-btn {
-    background: linear-gradient(135deg, #4a9eff 0%, #0066cc 100%);
+.subscribe-icon-btn {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
     border: none;
-    padding: 12px 16px;
-    color: #ffffff;
     cursor: pointer;
+    padding: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 2;
+}
+
+.subscribe-icon-btn svg {
+    width: 20px;
+    height: 20px;
+    stroke: #4a9eff;
+    fill: #4a9eff;
     transition: all 0.3s ease;
-    flex-shrink: 0;
 }
 
-.subscribe-btn:hover {
-    background: linear-gradient(135deg, #5ba8ff 0%, #0077dd 100%);
-    transform: scale(1.05);
-}
-
-.subscribe-btn svg {
-    width: 18px;
-    height: 18px;
+.subscribe-icon-btn:hover svg {
+    stroke: #0066cc;
+    fill: #0066cc;
+    transform: scale(1.1);
 }
 
 /* Footer Certifications Section */
@@ -3115,26 +3124,52 @@ main{
 }
 
 .social-icon {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ffffff;
+    color: #1a2332;
     text-decoration: none;
     transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .social-icon:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: #f0f0f0;
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .social-icon svg {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: #1a2332;
+    stroke-width: 2;
+}
+
+/* Ensure all social icons have proper styling */
+.social-icon svg path,
+.social-icon svg circle,
+.social-icon svg rect {
+    fill: #1a2332;
+    stroke: #1a2332;
+}
+
+/* Special handling for Instagram icon - outline only */
+.social-icon[aria-label="Instagram"] svg {
+    fill: none;
+    stroke: #1a2332;
+    stroke-width: 2;
+}
+
+.social-icon[aria-label="Instagram"] svg rect,
+.social-icon[aria-label="Instagram"] svg circle {
+    fill: none;
+    stroke: #1a2332;
 }
 
 /* ============================================
