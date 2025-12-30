@@ -2574,7 +2574,7 @@ main{
     font-weight: 700;
     color: #000000;
     line-height: 1.2;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 
 .success-stories-wrapper {
@@ -5270,7 +5270,7 @@ main{
    =================================== */
 
 .educators-transform-section {
-    padding: 100px 0;
+    padding: 100px 0 120px 0;
     background-color: #f8f9fa;  
 }
 
@@ -5420,7 +5420,7 @@ main{
 
 /* Educators CTA Section */
 .educators-cta {
-    padding: 60px 0;
+    padding: 60px 0 40px 0;
     border-radius: 20px;
     max-width: 1200px;
     margin: 60px auto 0;

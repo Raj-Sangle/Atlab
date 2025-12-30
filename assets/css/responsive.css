@@ -115,6 +115,7 @@
     }
 
     .educator-card .card-content h3 {
+        font-family: "Raleway", sans-serif;
         font-size: 22px;
         margin-bottom: 9px;
     }
@@ -431,7 +432,7 @@
 
     /* Educators Transform Section */
     .educators-transform-section {
-        padding: 80px 0;
+        padding: 80px 0 100px 0;
     }
 
     .educators-header {
@@ -470,6 +471,7 @@
     }
 
     .educator-card .card-content h3 {
+        font-family: "Raleway", sans-serif;
         font-size: 22px;
         margin-bottom: 10px;
     }
@@ -972,6 +974,7 @@
     }
 
     .success-stories-header h2 {
+        font-family: 'Raleway', sans-serif;
         font-size: 32px;
     }
 
@@ -1501,6 +1504,7 @@
     }
 
     .success-stories-header h2 {
+        font-family: 'Raleway', sans-serif;
         font-size: 28px;
     }
 
@@ -1538,7 +1542,7 @@
 
     /* Educators Transform Section */
     .educators-transform-section {
-        padding: 70px 0;
+        padding: 70px 0 90px 0;
     }
 
     .educators-header {
@@ -1563,7 +1567,7 @@
     }
 
     .educators-cta {
-        padding: 20px;
+        padding: 20px 20px 30px 20px;
     }
 
     .educators-cta h3 {
@@ -2845,7 +2849,7 @@
 
     /* Educators Section - Tablet (768px) */
     .educators-transform-section {
-        padding: 80px 0;
+        padding: 80px 0 100px 0;
     }
 
     .educators-header {
@@ -2887,6 +2891,7 @@
     }
 
     .educator-card .card-content h3 {
+        font-family: "Raleway", sans-serif;
         font-size: 24px;
         margin-bottom: 10px;
     }
@@ -2901,7 +2906,7 @@
     }
 
     .educators-cta {
-        padding: 40px 30px 20px;
+        padding: 40px 30px 30px 30px;
     }
 
     .educators-cta h3 {
@@ -2990,7 +2995,7 @@
 
     /* Educators Section - Mobile (480px) */
     .educators-transform-section {
-        padding: 60px 0;
+        padding: 60px 0 80px 0;
     }
 
     .educators-header {
@@ -3032,6 +3037,7 @@
     }
 
     .educator-card .card-content h3 {
+        font-family: "Raleway", sans-serif;
         font-size: 20px;
         margin-bottom: 8px;
     }
@@ -3046,7 +3052,7 @@
     }
 
     .educators-cta {
-        padding: 30px 20px 15px;
+        padding: 30px 20px 25px 20px;
         border-radius: 16px;
     }
 
@@ -3952,7 +3958,7 @@
 @media (max-width: 360px) {
     /* Educators Transform Section - Extra Small Mobile */
     .educators-transform-section {
-        padding: 50px 0;
+        padding: 50px 0 70px 0;
     }
 
     .educators-header {
@@ -3989,6 +3995,7 @@
     }
 
     .educator-card .card-content h3 {
+        font-family: "Raleway", sans-serif;
         font-size: 18px;
         margin-bottom: 7px;
     }
@@ -4003,7 +4010,7 @@
     }
 
     .educators-cta {
-        padding: 25px 15px 12px;
+        padding: 25px 15px 20px 15px;
     }
 
     .educators-cta h3 {

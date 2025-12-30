@@ -49,6 +49,23 @@
     line-height: 1.7;
 }
 
+/* Screen sizes smaller than 1440px */
+@media (max-width: 1439px) {
+    .learning-text-wrapper p {
+        margin-bottom: 60px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+    }
+}
+
+/* Specific fix for 1024px screen size - increase gap */
+@media (max-width: 1024px) {
+    .learning-text-wrapper p {
+        margin-bottom: 80px;
+    }
+}
+
 .learning-cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
