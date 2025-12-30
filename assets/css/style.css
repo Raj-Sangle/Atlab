@@ -2830,14 +2830,7 @@ main{
     opacity: 1;
 }
 
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(-100% / 2));
-    }
-}
+
 
 
 /* Footer Styles */
@@ -4920,35 +4913,24 @@ main{
     padding: 20px 0;
 }
 
+/* ============================================
+   KEY TECH COLLABORATORS SECTION - MAXIMUM OVERRIDE
+   ============================================ */
+
 .key-tech-carousel {
     display: flex;
     gap: 60px;
     align-items: center;
     width: max-content;
+    animation: simpleScroll 8s linear infinite;
 }
 
-.key-tech-carousel.active {
-    animation: scroll 15s linear infinite !important;
-    animation-play-state: running !important;
+/* SIMPLE WORKING KEYFRAMES */
+@keyframes simpleScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
-.key-tech-carousel.animate {
-    animation: scroll 15s linear infinite !important;
-    animation-play-state: running !important;
-}
-
-/* Additional specificity for carousel */
-div.key-tech-carousel.active,
-div.key-tech-carousel.animate,
-.key-tech-carousel-wrapper .key-tech-carousel.active,
-.key-tech-carousel-wrapper .key-tech-carousel.animate {
-    animation: scroll 15s linear infinite !important;
-    animation-play-state: running !important;
-}
-
-.key-tech-carousel:hover {
-    animation-play-state: paused;
-}
 
 .key-tech-carousel .partner-logo {
     flex-shrink: 0;

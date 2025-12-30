@@ -17,6 +17,44 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="k-12_landing/sticky-header.js"></script>
 
+    <!-- SIMPLE WORKING CAROUSEL - MAXIMUM SPECIFICITY -->
+    <style>
+        @keyframes simpleScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        /* MAXIMUM SPECIFICITY */
+        section.key-tech-section .key-tech-carousel,
+        .key-tech-section .key-tech-carousel,
+        div.key-tech-carousel,
+        .key-tech-carousel,
+        #techCarousel {
+            display: flex !important;
+            gap: 60px !important;
+            align-items: center !important;
+            width: max-content !important;
+            animation: simpleScroll 8s linear infinite !important;
+            animation-play-state: running !important;
+        }
+        
+        .key-tech-carousel-wrapper {
+            overflow: hidden !important;
+            position: relative !important;
+        }
+        
+        @media (max-width: 768px) {
+            section.key-tech-section .key-tech-carousel,
+            .key-tech-section .key-tech-carousel,
+            div.key-tech-carousel,
+            .key-tech-carousel,
+            #techCarousel {
+                gap: 40px !important;
+                animation: simpleScroll 8s linear infinite !important;
+            }
+        }
+    </style>
+
 </head>
 
 
@@ -397,7 +435,7 @@
             <div class="key-tech-card">
                 <h2 class="key-tech-title" data-aos="fade-up" data-aos-duration="800">Key Tech Collaborators</h2>
                 <div class="key-tech-carousel-wrapper" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
-                    <div class="key-tech-carousel active">
+                    <div class="key-tech-carousel" id="techCarousel">
                         <div class="partner-logo">
                             <img src="assets/images/k12-partners/kubo.png" alt="Kubo" />
                         </div>
@@ -1179,31 +1217,14 @@
         document.addEventListener('DOMContentLoaded', function() {
             const keyTechCarousel = document.querySelector('.key-tech-carousel');
             
-            function initializeCarousel(carousel) {
-                if (!carousel) return;
-                
-                const logos = Array.from(carousel.querySelectorAll('.partner-logo'));
+            if (keyTechCarousel) {
+                const logos = Array.from(keyTechCarousel.querySelectorAll('.partner-logo'));
                 
                 // Clone logos to create seamless loop
                 logos.forEach(logo => {
                     const clone = logo.cloneNode(true);
-                    carousel.appendChild(clone);
+                    keyTechCarousel.appendChild(clone);
                 });
-                
-                // Add animation class
-                carousel.classList.add('animate');
-                
-                // Reset animation when it ends to create infinite loop
-                carousel.addEventListener('animationiteration', () => {
-                    carousel.style.animation = 'none';
-                    setTimeout(() => {
-                        carousel.style.animation = '';
-                    }, 10);
-                });
-            }
-            
-            if (keyTechCarousel) {
-                initializeCarousel(keyTechCarousel);
             }
         });
 
