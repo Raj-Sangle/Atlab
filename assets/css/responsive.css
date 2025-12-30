@@ -17,6 +17,14 @@
         text-align: center !important;
         color: #000000 !important;
     }
+    
+    .steam-banner-section .cont p {
+        font-size: 16px !important;
+        text-align: center !important;
+        max-width: 900px !important;
+        padding: 0 60px !important;
+        margin: 0 auto !important;
+    }
 }
 
 /* Screens 1025px to 1439px */
@@ -34,6 +42,14 @@
         color: #000000 !important;
         font-weight: 900 !important;
         font-family: 'Raleway', sans-serif !important;
+    }
+    
+    .steam-banner-section .cont p {
+        font-size: 16px !important;
+        text-align: center !important;
+        max-width: 900px !important;
+        padding: 0 60px !important;
+        margin: 0 auto !important;
     }
 }
 
@@ -1316,8 +1332,8 @@
     }
 
     .steam-banner-section .cont p {
-        font-size: 14px !important;
-        line-height: 1.3 !important;
+        font-size: 16px !important;
+        line-height: 1.6 !important;
         max-width: 700px;
     }
 
@@ -1862,9 +1878,13 @@
     }
 
     .steam-banner-section .cont p {
-        font-size: 14px !important;
-        line-height: 1.3 !important;
-        max-width: 800px;
+        font-size: 15px !important;
+        line-height: 1.6 !important;
+        max-width: 100%;
+        padding: 0 20px !important;
+        text-align: center;
+        margin: 0 auto;
+        position: static;
     }
 
     .steam-banner-section .circles img:first-child {
@@ -2238,14 +2258,16 @@
 /* Large Tablet / Small Desktop */
 @media (max-width: 1280px) {
     .k12-tab-content.active {
-        padding: 50px 240px 50px 40px;
-        margin-right: 180px;
+        padding: 40px;
+        margin-right: 0;
     }
 
     .k12-content-right {
-        right: -160px;
-        flex: 0 0 420px;
-        max-width: 420px;
+        position: static;
+        flex: 0 0 auto;
+        max-width: 100%;
+        margin-left: 0;
+        margin-top: 30px;
     }
 
     .image-carousel {
@@ -2672,6 +2694,11 @@
    KEY TECH COLLABORATORS - RESPONSIVE
    ============================================ */
 
+/* Ensure consistent animation speed across all screen sizes */
+.key-tech-carousel.animate {
+    animation: infiniteScroll 20s linear infinite !important;
+}
+
 /* Tablet */
 @media (max-width: 1024px) {
     .key-tech-section {
@@ -2692,7 +2719,8 @@
         gap: 50px;
     }
 
-    .key-tech-carousel .partner-logo {
+    .key-tech-carousel .partner-logo,
+    .key-tech-carousel .partner-logo.cloned {
         width: 120px;
         height: 70px;
     }
@@ -2722,7 +2750,8 @@
         gap: 40px;
     }
 
-    .key-tech-carousel .partner-logo {
+    .key-tech-carousel .partner-logo,
+    .key-tech-carousel .partner-logo.cloned {
         width: 100px;
         height: 60px;
     }
@@ -2752,7 +2781,8 @@
         gap: 35px;
     }
 
-    .key-tech-carousel .partner-logo {
+    .key-tech-carousel .partner-logo,
+    .key-tech-carousel .partner-logo.cloned {
         width: 90px;
         height: 50px;
     }
@@ -3767,13 +3797,6 @@
     }
 }
 
-    .steam-banner-section .cont p {
-        font-size: 13px;
-        line-height: 1.6;
-        position: relative;
-        right: 15px;
-    }
-
     .steam-banner-section .circles img:first-child {
         width: 120px;
         height: 120px;
@@ -3918,10 +3941,6 @@
         overflow-wrap: break-word !important;
     }
 }
-
-    .steam-banner-section .cont p {
-        font-size: 12px;
-    }
 
 
 /* Hero decorations responsive */

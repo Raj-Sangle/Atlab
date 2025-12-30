@@ -43,15 +43,9 @@
             position: relative !important;
         }
         
-        @media (max-width: 768px) {
-            section.key-tech-section .key-tech-carousel,
-            .key-tech-section .key-tech-carousel,
-            div.key-tech-carousel,
-            .key-tech-carousel,
-            #techCarousel {
-                gap: 40px !important;
-                animation: simpleScroll 8s linear infinite !important;
-            }
+        /* Ensure consistent carousel animation across all screen sizes */
+        .key-tech-carousel.animate {
+            animation: infiniteScroll 20s linear infinite !important;
         }
     </style>
 
@@ -1217,13 +1211,45 @@
         document.addEventListener('DOMContentLoaded', function() {
             const keyTechCarousel = document.querySelector('.key-tech-carousel');
             
-            if (keyTechCarousel) {
-                const logos = Array.from(keyTechCarousel.querySelectorAll('.partner-logo'));
+            function initializeKeyTechCarousel(carousel) {
+                if (!carousel) return;
+
+                // Remove existing clones if any
+                const existingClones = carousel.querySelectorAll('.partner-logo.cloned');
+                existingClones.forEach(clone => clone.remove());
+
+                // Remove animate class to reset
+                carousel.classList.remove('animate');
+
+                const logos = carousel.querySelectorAll('.partner-logo:not(.cloned)');
                 
-                // Clone logos to create seamless loop
+                // Only proceed if we have logos
+                if (logos.length === 0) return;
+
+                // Clone all logos for seamless infinite scroll
                 logos.forEach(logo => {
                     const clone = logo.cloneNode(true);
-                    keyTechCarousel.appendChild(clone);
+                    clone.classList.add('cloned');
+                    carousel.appendChild(clone);
+                });
+
+                // Start animation after cloning with a small delay
+                setTimeout(() => {
+                    carousel.classList.add('animate');
+                }, 100);
+            }
+            
+            // Initialize the carousel
+            if (keyTechCarousel) {
+                initializeKeyTechCarousel(keyTechCarousel);
+                
+                // Reinitialize on window resize to handle responsive changes
+                let resizeTimeout;
+                window.addEventListener('resize', function() {
+                    clearTimeout(resizeTimeout);
+                    resizeTimeout = setTimeout(() => {
+                        initializeKeyTechCarousel(keyTechCarousel);
+                    }, 250);
                 });
             }
         });
