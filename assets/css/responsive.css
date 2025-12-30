@@ -5,8 +5,40 @@
 /* Large Screens 1440px and above */
 @media (min-width: 1440px) {
     .steam-banner-section .cont h2 {
-        font-size: 48px !important;
+        font-size: 36px !important;
         line-height: 1.15;
+        margin-top: 100px !important;
+        margin-bottom: 30px !important;
+        text-align: center !important;
+        color: #000000 !important;
+    }
+}
+
+/* Screens greater than 1024px */
+@media (min-width: 1025px) {
+    .steam-banner-section .cont h2 {
+        font-size: 36px !important;
+        line-height: 1.15;
+        margin-top: 100px !important;
+        margin-bottom: 30px !important;
+        text-align: center !important;
+        color: #000000 !important;
+        font-weight: 900 !important;
+        font-family: 'Raleway', sans-serif !important;
+    }
+}
+
+/* Tablet range: 769px to 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .steam-banner-section .cont h2 {
+        font-size: 32px !important;
+        font-weight: 900 !important;
+        line-height: 1.2;
+        margin-top: 100px !important;
+        margin-bottom: 30px !important;
+        text-align: center !important;
+        color: #000000 !important;
+        font-family: 'Raleway', sans-serif !important;
     }
 }
 
@@ -1250,14 +1282,21 @@
 
     /* Steam Banner Section - Mobile */
     .steam-banner-section .cont {
-        padding: 35px 15px 45px;
-        text-align: center;
+        padding: 35px 20px 45px !important;
+        text-align: center !important;
+        margin: 0 auto !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
     }
 
     .steam-banner-section .cont h2 {
-        font-size: 32px !important;
+        font-size: 28px !important;
         line-height: 1.2;
         font-weight: 900 !important;
+        margin-top: 80px !important;
+        margin-bottom: 30px !important;
+        text-align: center !important;
+        color: #000000 !important;
     }
 
     .steam-banner-section .cont h2 br {
@@ -1719,6 +1758,20 @@
 
 /* Mobile: max-width 768px */
 @media (max-width: 768px) {
+    /* Steam Banner Section - Mobile Override */
+    .steam-banner-section .cont h2 {
+        font-size: 28px !important;
+        line-height: 1.2;
+        font-weight: 900 !important;
+        margin-top: 80px !important;
+        margin-bottom: 30px !important;
+        text-align: center !important;
+        color: #000000 !important;
+        padding: 0 20px !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+
     .process-flow-section {
         padding: 60px 15px;
     }
@@ -1781,13 +1834,18 @@
     .steam-banner-section .cont {
         padding: 40px 20px 50px;
         max-width: 900px;
-        text-align: center;
+        text-align: center !important;
+        margin: 0 auto !important;
     }
 
     .steam-banner-section .cont h2 {
-        font-size: 38px !important;
+        font-size: 32px !important;
         font-weight: 900 !important;
         line-height: 1.2;
+        margin-top: 100px !important;
+        margin-bottom: 30px !important;
+        text-align: center !important;
+        color: #000000 !important;
     }
 
     .steam-banner-section .cont p {
@@ -3664,15 +3722,28 @@
 
     /* Steam Banner Section - Small Mobile */
     .steam-banner-section .cont {
-        padding: 30px 10px 40px;
-        text-align: center;
+        padding: 30px 15px 40px !important;
+        text-align: center !important;
+        margin: 0 auto !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
     }
 
+/* Small Mobile: max-width 480px */
+@media (max-width: 480px) {
     .steam-banner-section .cont h2 {
-        font-size: 18px;
-        margin-bottom: 16px;
+        font-size: 28px !important;
+        margin-top: 80px !important;
+        margin-bottom: 30px !important;
         font-weight: 900 !important;
+        text-align: center !important;
+        line-height: 1.2;
+        color: #000000 !important;
+        padding: 0 15px !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
     }
+}
 
     .steam-banner-section .cont p {
         font-size: 13px;
@@ -3806,11 +3877,23 @@
     .educators-cta p {
         font-size: 12px;
     }
+}
 
+/* Extra Small Mobile: max-width 480px */
+@media (max-width: 480px) {
     .steam-banner-section .cont h2 {
-        font-size: 24px;
+        font-size: 28px !important;
         font-weight: 900 !important;
+        margin-top: 80px !important;
+        margin-bottom: 30px !important;
+        text-align: center !important;
+        line-height: 1.2;
+        color: #000000 !important;
+        padding: 0 15px !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
     }
+}
 
     .steam-banner-section .cont p {
         font-size: 12px;

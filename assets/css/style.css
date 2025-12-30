@@ -4098,10 +4098,10 @@ main{
 }
 
 .steam-banner-section .cont {
-    text-align: center;
+    text-align: center !important;
     max-width: 1200px;
+    margin: 0 auto !important;
     width: 100%;
-    margin: 0 auto;
     padding: 60px 60px 80px;
     background: transparent;
     position: relative;
@@ -4109,12 +4109,14 @@ main{
 }
 
 .steam-banner-section .cont h2 {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway', sans-serif !important;
     font-size: 36px !important;
     font-weight: 900 !important;
-    color: #1f2937;
-    margin-bottom: 60px !important;
-    line-height: 1.15;
+    color: #000000 !important;
+    margin-top: 100px !important;
+    margin-bottom: 30px !important;
+    line-height: 1.15 !important;
+    text-align: center !important;
 }
 
 .steam-banner-section .cont p {
