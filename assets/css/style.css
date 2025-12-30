@@ -4770,10 +4770,10 @@ main{
 
 .solution-content h2 {
     font-family: 'Raleway', sans-serif;
-    font-size: 36px;
+    font-size: 28px;
     font-weight: 700;
     color: #ffffff;
-    margin: 0 0 20px 0;
+    margin: 0 0 30px 0;
     line-height: 1.2;
 }
 
@@ -4829,7 +4829,7 @@ main{
     font-size: 14px;
     font-weight: 700;
     letter-spacing: 0.05em;
-    color: #333;
+    color: #ffffff !important;
     z-index: 1;
 }
 
@@ -4840,7 +4840,7 @@ main{
     fill: none;
     stroke-linecap: round;
     stroke-linejoin: round;
-    stroke: #333;
+    stroke: #ffffff !important;
     stroke-width: 2;
     transform: translateX(-5px);
     transition: all 0.3s ease;
@@ -4928,11 +4928,22 @@ main{
 }
 
 .key-tech-carousel.active {
-    animation: scroll 30s linear infinite;
+    animation: scroll 15s linear infinite !important;
+    animation-play-state: running !important;
 }
 
 .key-tech-carousel.animate {
-    animation-play-state: running;
+    animation: scroll 15s linear infinite !important;
+    animation-play-state: running !important;
+}
+
+/* Additional specificity for carousel */
+div.key-tech-carousel.active,
+div.key-tech-carousel.animate,
+.key-tech-carousel-wrapper .key-tech-carousel.active,
+.key-tech-carousel-wrapper .key-tech-carousel.animate {
+    animation: scroll 15s linear infinite !important;
+    animation-play-state: running !important;
 }
 
 .key-tech-carousel:hover {
