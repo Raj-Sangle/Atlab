@@ -2601,8 +2601,8 @@ main{
     display: none;
 }
 
-/* Desktop and Laptop Carousel - Continuous Auto Scroll */
-@media (min-width: 1024px) {
+/* Desktop and Laptop Carousel - Continuous Auto Scroll - Only for screens 1440px and above */
+@media (min-width: 1440px) {
     .success-stories-section {
         overflow: hidden;
         width: 100%;
@@ -2653,6 +2653,46 @@ main{
 
     .success-stories-grid.success-stories-slider .story-card * {
         box-sizing: border-box;
+    }
+}
+
+/* Grid layout for screens between 1024px and 1439px */
+@media (min-width: 1024px) and (max-width: 1439px) {
+    .success-stories-section {
+        overflow: visible;
+        width: 100%;
+    }
+
+    .success-stories-section .container {
+        padding: 0 40px;
+        max-width: 1200px;
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+
+    .success-stories-wrapper {
+        overflow: visible;
+        width: 100%;
+        position: relative;
+    }
+
+    .success-stories-grid.success-stories-slider {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 30px !important;
+        width: 100% !important;
+        animation: none !important;
+        will-change: auto !important;
+    }
+
+    .success-stories-grid.success-stories-slider .story-card {
+        flex: none !important;
+        width: 100% !important;
+        min-width: auto !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
     }
 }
 
@@ -5778,7 +5818,7 @@ main{
 
 /* K-12 CTA Section */
 .k12-cta-section {
-    padding: 80px 0;
+    padding: 40px 0 80px 0;
     background: #ffffff;
     overflow: hidden;
 }

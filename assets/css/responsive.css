@@ -1022,10 +1022,44 @@
     .story-content p {
         font-size: 13px;
     }
+}
+
+/* Override for screens 1025px to 1439px - Use 3-column grid instead of 2-column */
+@media (min-width: 1025px) and (max-width: 1439px) {
+    .success-stories-grid.success-stories-slider {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 30px !important;
+        animation: none !important;
+        transform: none !important;
+        width: 100% !important;
+    }
+
+    .success-stories-grid.success-stories-slider .story-card {
+        flex: none !important;
+        max-width: 100% !important;
+        min-width: auto !important;
+        width: 100% !important;
+    }
+
+    .story-content {
+        padding: 30px;
+    }
+
+    .story-content h3 {
+        font-size: 18px;
+    }
+
+    .story-content p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 1024px) {
 
     /* K-12 CTA Section - Tablet */
     .k12-cta-section {
-        padding: 50px 20px;
+        padding: 30px 20px 50px 20px;
         overflow: hidden;
     }
 
@@ -1080,7 +1114,7 @@
 /* Smaller Tablet - 900px */
 @media (max-width: 900px) {
     .k12-cta-section {
-        padding: 45px 20px;
+        padding: 25px 20px 45px 20px;
         overflow: hidden;
     }
 
@@ -3148,7 +3182,7 @@
 
     /* K-12 CTA Section - Mobile */
     .k12-cta-section {
-        padding: 50px 15px;
+        padding: 30px 15px 50px 15px;
         overflow: hidden;
     }
 
@@ -3203,7 +3237,7 @@
 /* Extra Small Mobile - 480px */
 @media (max-width: 480px) {
     .k12-cta-section {
-        padding: 40px 15px;
+        padding: 25px 15px 40px 15px;
         overflow: hidden;
     }
 
@@ -3897,7 +3931,7 @@
     }
 
     .k12-cta-section {
-        padding: 35px 10px;
+        padding: 20px 10px 35px 10px;
     }
 
     .k12-cta-card {

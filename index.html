@@ -1334,10 +1334,10 @@
         const successStoriesSlider = document.querySelector('.success-stories-slider');
 
         if (successStoriesSlider) {
-            let isDesktop = window.innerWidth >= 1024;
+            let isDesktop = window.innerWidth >= 1440;
 
             function initializeStoriesSlider() {
-                isDesktop = window.innerWidth >= 1024;
+                isDesktop = window.innerWidth >= 1440;
 
                 if (isDesktop) {
                     // Remove existing clones
@@ -1361,7 +1361,7 @@
                         successStoriesSlider.appendChild(clone);
                     });
                 } else {
-                    // Remove clones on mobile/tablet
+                    // Remove clones on mobile/tablet/smaller desktop
                     const existingClones = successStoriesSlider.querySelectorAll('.story-card.cloned');
                     existingClones.forEach(clone => clone.remove());
                 }
