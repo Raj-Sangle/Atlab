@@ -5685,13 +5685,13 @@ main{
 
 .k12-stats-section {
     position: relative;
-    padding: 120px 0;
+    padding: 80px 0;
     overflow: hidden;
     background-image: url('../../ATLAB_K12_revised-assets/CounterBanner.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 500px;
+    min-height: 400px;
 }
 
 .k12-stats-background {
@@ -5707,7 +5707,7 @@ main{
     z-index: 1;
     display: flex;
     align-items: center;
-    min-height: 500px;
+    min-height: 400px;
     padding-left: 0;
     margin-left: 0;
     max-width: 100%;
@@ -5756,7 +5756,8 @@ main{
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     letter-spacing: -1px;
     flex-shrink: 0;
-    min-width: 120px;
+    width: 140px;
+    text-align: left;
 }
 
 .k12-stat-item .stat-label {
@@ -5765,7 +5766,6 @@ main{
     font-weight: 400;
     color: #ffffff;
     line-height: 1.4;
-    max-width: 160px;
     margin: 0;
     flex: 1;
 }
