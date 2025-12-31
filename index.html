@@ -17,14 +17,15 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="k-12_landing/sticky-header.js"></script>
 
-    <!-- SIMPLE WORKING CAROUSEL - MAXIMUM SPECIFICITY -->
+    <!-- OPTIMIZED KEY TECH CAROUSEL - MAXIMUM SPECIFICITY -->
     <style>
-        @keyframes simpleScroll {
+        /* Keyframe for carousel animation */
+        @keyframes infiniteScroll {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
         
-        /* MAXIMUM SPECIFICITY */
+        /* MAXIMUM SPECIFICITY FOR CAROUSEL */
         section.key-tech-section .key-tech-carousel,
         .key-tech-section .key-tech-carousel,
         div.key-tech-carousel,
@@ -34,8 +35,8 @@
             gap: 60px !important;
             align-items: center !important;
             width: max-content !important;
-            animation: simpleScroll 8s linear infinite !important;
-            animation-play-state: running !important;
+            max-width: none !important;
+            will-change: transform !important;
         }
         
         .key-tech-carousel-wrapper {
@@ -43,9 +44,18 @@
             position: relative !important;
         }
         
-        /* Ensure consistent carousel animation across all screen sizes */
+        /* Animation class - consistent across all screen sizes */
         .key-tech-carousel.animate {
             animation: infiniteScroll 20s linear infinite !important;
+        }
+        
+        /* Prevent global constraints from affecting carousel elements */
+        .key-tech-carousel *,
+        .key-tech-carousel .partner-logo,
+        .key-tech-carousel .partner-logo.cloned {
+            max-width: none !important;
+            word-wrap: normal !important;
+            overflow-wrap: normal !important;
         }
     </style>
 

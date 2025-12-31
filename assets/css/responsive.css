@@ -2,11 +2,6 @@
    RESPONSIVE STYLES - ALL MEDIA QUERIES
    ============================================ */
 
-/* SIMPLE CAROUSEL - WORKS ON ALL SCREENS */
-.key-tech-carousel {
-    animation: simpleScroll 8s linear infinite;
-}
-
 /* Large Screens 1440px and above */
 @media (min-width: 1440px) {
     .steam-banner-section .cont h2 {
@@ -2731,11 +2726,6 @@
    KEY TECH COLLABORATORS - RESPONSIVE
    ============================================ */
 
-/* Ensure consistent animation speed across all screen sizes */
-.key-tech-carousel.animate {
-    animation: infiniteScroll 20s linear infinite !important;
-}
-
 /* Tablet */
 @media (max-width: 1024px) {
     .key-tech-section {
@@ -2760,10 +2750,19 @@
     .key-tech-carousel .partner-logo.cloned {
         width: 120px;
         height: 70px;
+        max-width: none !important;
     }
 
     .key-tech-carousel .partner-logo img {
         max-height: 70px;
+    }
+    
+    /* Override global constraints for carousel */
+    .key-tech-carousel,
+    .key-tech-carousel * {
+        max-width: none !important;
+        word-wrap: normal !important;
+        overflow-wrap: normal !important;
     }
 }
 
@@ -2791,10 +2790,19 @@
     .key-tech-carousel .partner-logo.cloned {
         width: 100px;
         height: 60px;
+        max-width: none !important;
     }
 
     .key-tech-carousel .partner-logo img {
         max-height: 60px;
+    }
+    
+    /* Override global constraints for carousel on mobile */
+    .key-tech-carousel,
+    .key-tech-carousel * {
+        max-width: none !important;
+        word-wrap: normal !important;
+        overflow-wrap: normal !important;
     }
 }
 
@@ -2822,10 +2830,19 @@
     .key-tech-carousel .partner-logo.cloned {
         width: 90px;
         height: 50px;
+        max-width: none !important;
     }
 
     .key-tech-carousel .partner-logo img {
         max-height: 50px;
+    }
+    
+    /* Override global constraints for carousel on small mobile */
+    .key-tech-carousel,
+    .key-tech-carousel * {
+        max-width: none !important;
+        word-wrap: normal !important;
+        overflow-wrap: normal !important;
     }
 }
 

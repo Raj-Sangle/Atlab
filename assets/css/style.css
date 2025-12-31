@@ -5064,6 +5064,13 @@ main{
     width: 100%;
 }
 
+/* Prevent global max-width constraints from affecting carousel */
+.key-tech-carousel,
+.key-tech-carousel .partner-logo,
+.key-tech-carousel .partner-logo.cloned {
+    max-width: none !important;
+}
+
 .key-tech-carousel-wrapper::before,
 .key-tech-carousel-wrapper::after {
     content: '';
@@ -5094,12 +5101,13 @@ main{
     gap: 60px;
     align-items: center;
     width: max-content;
-    /* Remove the automatic animation - we'll control it with JavaScript */
+    /* Animation will be controlled by JavaScript */
 }
 
 /* Animation class that will be added by JavaScript */
 .key-tech-carousel.animate {
     animation: infiniteScroll 20s linear infinite;
+    will-change: transform;
 }
 
 /* Pause animation on hover for better user experience */
