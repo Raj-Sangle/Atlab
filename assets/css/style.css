@@ -4619,9 +4619,9 @@ main{
 }
 
 .partner-logos img {
-    height: 35px;
+    height: 45px;
     width: 100%;
-    max-width: 120px;
+    max-width: 150px;
     object-fit: contain;
     filter: grayscale(0%);
     opacity: 0.85;
