@@ -1059,7 +1059,7 @@
 
     /* K-12 CTA Section - Tablet */
     .k12-cta-section {
-        padding: 30px 20px 50px 20px;
+        padding: 15px 20px 50px 20px;
         overflow: hidden;
     }
 
@@ -1114,7 +1114,7 @@
 /* Smaller Tablet - 900px */
 @media (max-width: 900px) {
     .k12-cta-section {
-        padding: 25px 20px 45px 20px;
+        padding: 10px 20px 45px 20px;
         overflow: hidden;
     }
 
@@ -3182,7 +3182,7 @@
 
     /* K-12 CTA Section - Mobile */
     .k12-cta-section {
-        padding: 30px 15px 50px 15px;
+        padding: 15px 15px 50px 15px;
         overflow: hidden;
     }
 
@@ -3237,7 +3237,7 @@
 /* Extra Small Mobile - 480px */
 @media (max-width: 480px) {
     .k12-cta-section {
-        padding: 25px 15px 40px 15px;
+        padding: 10px 15px 40px 15px;
         overflow: hidden;
     }
 
@@ -3931,7 +3931,7 @@
     }
 
     .k12-cta-section {
-        padding: 20px 10px 35px 10px;
+        padding: 5px 10px 35px 10px;
     }
 
     .k12-cta-card {
